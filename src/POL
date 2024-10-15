@@ -1,0 +1,1779 @@
+import { Translations } from "../types";
+
+const pl = {
+  // onboarding
+  inviteTeamMembersTo: "Zaproś członków zespołu do swojego miejsca pracy", // Invite team members to your workspace
+  loggingIn: "Logowanie", // Logging you in
+  defaultSpaceName: "Ogólny", // General
+  onboardingSpaceName: "Witamy 👋", // Welcome 👋
+  loginCodeSendAgain: "Wyślij swój kod logowania ponownie", // Send your login code again
+  loginCodeResent: "Twój kod logowania został wysłany ponownie.", // Your login code has been sent again.
+  loginCodeError: "Błędny kod weryfikacji logowania.", // Wrong login verification code.
+  loginCodeErrorSending: 
+    "Wystąpił problem z wysyłką kodu weryfikacji logowania.", // There was a problem sending your login verification code.
+  loginCodeErrorExpired: 
+    "Twój kod weryfikacji logowania wygasł, wysłaliśmy ci nowy.", // Your login verification has expired, we’ve sent you another one.
+  loginCodeErrorRateLimited: 
+    "Zbyt wiele prób, spróbuj ponownie później.", // You’ve made too many attempts, please try again later.
+  pickAWorkspaceName: "Wybierz nazwę miejsca pracy", // Pick a workspace name
+  creatingWorkspace: "Tworzenie miejsca pracy", // Creating workspace
+  createaSpace: "Utwórz przestrzeń", // Create a space
+  subdomainExists: "Ta nazwa miejsca pracy jest już zajęta. Proszę spróbować innej.", // This workspace name is already taken. Please try another.
+  emailLabel: "Twój adres e-mail", // Your email address
+  passwordLabel: "Hasło", // Password
+  checkEmail: "Sprawdź swój e-mail", // Check your email
+  haveSent: "Wysłaliśmy ", // We’ve sent a 
+  weSentALoginCode: "Wysłaliśmy kod logowania na:", // We sent a login code to:
+  sixDigit: "6-cyfrowy kod logowania", // 6 digit login code
+  sixDigits: "6 cyfr", // 6 digits
+  confTo: "do", // to
+  checkInbox: "Proszę sprawdzić swoją skrzynkę odbiorczą.", // Please check your inbox.
+  teamName: "Jak nazywa się twój zespół?", // What’s the name of your team?
+  workspaceNameLabel: "Nazwa miejsca pracy", // Workspace name
+  workspaceNamePlaceHolder: "np. Przemysł Acme", // e.g. Acme industries
+  spaceNameLabel: "Nazwa przestrzeni", // Space name
+  spaceNamePlaceHolder: "np. sklep internetowy", // e.g. web-shop
+  min3Characters: "Minimum 3 znaki.", // Minimum 3 characters long.
+  continueWithGoogle: "Kontynuuj z Google", // Continue with Google
+  welcomeToSuperThread: "Witamy w Superthread", // Welcome to Superthread
+  aWorkspaceIs: 
+    "Miejsce pracy zazwyczaj nosi nazwę twojej organizacji. Nie możesz zmienić tej nazwy później.", // A workspace is usually named after your organisation. You cannot change this name later.
+  youCanChangeThis: 
+    "Możesz to zmienić później i utworzyć tyle przestrzeni, ile chcesz.", // You can change this later and create as many spaces as you like.
+  LoginCode: "Kod logowania", // Login code
+  enterLoginCode: "Wprowadź kod logowania", // Enter login code
+  continueWithEmail: "Kontynuuj z e-mailem", // Continue with Email
+  registerGoogle: "Zarejestruj się za pomocą Google", // Register With Google
+  onboardingEmailPlaceholder: "ty@example.com", // you@example.com
+  // cards
+  cardsLayoutList: "Lista", // List
+  cardsLayoutBoard: "Tablica", // Board
+  cardsLayoutTimeline: "Oś czasu", // Timeline
+  cardsLayoutCalendar: "Kalendarz (Beta)", // Calendar (Beta)
+  // Group titles
+  ["slash.group.media"]: "Media", // Media
+  ["slash.group.basic"]: "Podstawowe", // Basic
+  ["slash.group.inline"]: "Wbudowane", // Inline
+  ["slash.group.embed"]: "Osadzone", // Embed
+  // Keywords
+  ["slash.keyword.media"]: "dołącz, obraz, plik, przesyłanie, media, załącznik", // attach,image,file,upload,media,attachment
+  // Commands
+  // slashCommands
+  ["slash.display.attach"]: "Załącz", // Attach
+  ["slash.search.attach"]: "załącz", // attach
+  "slash.display.image": "Obraz", // Image
+  "slash.display.youtube": "Osadź film z YouTube", // Embed YouTube video
+  "slash.display.checklist": "Lista kontrolna", // Checklist
+  "slash.display.table": "Tabela", // Table
+  "slash.display.h1": "H1", // H1
+  "slash.display.h2": "H2", // H2
+  "slash.display.h3": "H3", // H3
+  "slash.display.bulleted": "Lista punktowana", // Bulleted list
+  "slash.display.numbered": "Lista numerowana", // Numbered list
+  "slash.display.blockquote": "Cytat blokowy", // Blockquote
+  "slash.display.hr": "Linia pozioma", // Horizontal rule
+  "slash.display.card": "Karta", // Card
+  "slash.display.mention": "Wzmianka", // Mention
+  "slash.display.codeBlock": "Blok kodu", // Code block
+  "slash.display.board": "Tablica", // Board
+  "slash.display.callout": "Wyróżnienie", // Callout
+  "slash.search.image": "obraz", // image
+  "slash.search.youtube": "film z youtube", // youtube video
+  "slash.search.checklist": "lista kontrolna", // checklist
+  "slash.search.table": "tabela", // table
+  "slash.search.h1": "h1", // h1
+  "slash.search.h2": "h2", // h2
+  "slash.search.h3": "h3", // h3
+  "slash.search.bulleted": "lista punktowana", // bulleted list
+  "slash.search.numbered": "lista numerowana", // numbered list
+  "slash.search.blockquote": "cytat blokowy", // blockquote
+  "slash.search.hr": "linia pozioma", // horizontal rule
+  "slash.search.card": "karta", // card
+  "slash.search.mention": "wzmianka", // mention
+  "slash.search.codeBlock": "blok kodu", // code block
+  "slash.search.embed": "osadź tablicę", // embed board
+  // menus
+  "menu.add-column-before": "Dodaj kolumnę przed", // Add column before
+  "menu.add-column-after": "Dodaj kolumnę po", // Add column after
+  "menu.add-row-before": "Dodaj wiersz przed", // Add row before
+  "menu.add-row-after": "Dodaj wiersz po", // Add row after
+  "menu.merge-cells": "Przełącz scalanie komórek", // Toggle merge cells
+  "menu.toggle-header-row": "Przełącz wiersz nagłówka", // Toggle header row
+  "menu.delete-column": "Usuń kolumnę", // Delete column
+  "menu.delete-row": "Usuń wiersz", // Delete row
+  "menu.delete-table": "Usuń tabelę", // Delete table
+  "menu.toggle-expand-to-page-size": "Przełącz pełną szerokość", // Toggle full width
+  "menu.add-comment": "Dodaj komentarz", // Add comment
+  "menu.heading": "Nagłówek %{level}", // Heading %{level}
+  "menu.bold": "Pogrubienie", // Bold
+  "menu.italic": "Kursywa", // Italic
+  "menu.strikethrough": "Przekreślenie", // Strikethrough
+  "menu.underline": "Podkreślenie", // Underline
+  "menu.check-list": "Lista kontrolna", // Checklist
+  "menu.bullet-list": "Lista punktowana", // Bullet list
+  "menu.ordered-list": "Lista uporządkowana", // Ordered list
+  "menu.horizontal-rule": "Linia pozioma", // Horizontal rule
+  "menu.link": "Link", // Link
+  "menu.quick-card": "Szybka karta", // Quick card
+  "menu.blockquote": "Cytat blokowy", // Block quote
+  "menu.codeblock": "Blok kodu", // Code block
+  "menu.code": "Kod inline", // Inline code
+  "menu.undo": "Cofnij", // Undo
+  "menu.redo": "Powtórz", // Redo
+  "menu.table-cell-color": "Kolor komórki", // Cell color
+  "menu.clear-table-cell-color": "Wyczyść kolor komórki", // Clear cell color
+  "menu.align-left": "Wyrównaj do lewej", // Align left
+  "menu.align-center": "Wyrównaj do środka", // Align center
+  "menu.align-right": "Wyrównaj do prawej", // Align right
+  "editor.clickToDownload": "Kliknij, aby pobrać", // Click to download
+  "editor.loading": "Ładowanie", // Loading
+  "editor.characterLimitReachedTryFile":
+    "Osiągnięto limit znaków. Aby dodać większą zawartość, możesz załączyć pliki.", // Character limit reached. For larger content, you can attach files.
+  "editor.uploading": "Przesyłanie", // Uploading
+  "editor.genericFileError": "Twój plik nie mógł zostać przesłany.", // Your file could not be uploaded.
+  // billing
+  ["billing.unlimitedMembers"]: "Nieograniczona liczba członków zespołu", // Unlimited team members
+  ["billing.unlimitedSpaces"]: "Nieograniczona liczba przestrzeni", // Unlimited spaces
+  ["billing.unlimitedBoards"]: "Nieograniczona liczba tablic", // Unlimited boards
+  ["billing.unlimitedCardsAndPages"]: "Nieograniczona liczba kart i stron", // Unlimited cards and pages
+  ["billing.unlimitedViews"]: "Nieograniczona liczba wyświetleń", // Unlimited views
+  ["billing.category.workspaceMembers"]: "Członkowie przestrzeni roboczej", // Workspace members
+  ["billing.category.spaces"]: "Przestrzenie", // Spaces
+  ["billing.category.boards"]: "Tablice", // Boards
+  ["billing.category.cardsAndPages"]: "Karty i strony", // Cards and pages
+  ["billing.category.views"]: "Wyświetlenia", // Views
+  ["billing.category.fileSize"]: "Rozmiar pliku", // File size
+  ["billing.category.privateSpaces"]: "Prywatne przestrzenie", // Private spaces
+  ["billing.category.userPermissions"]: "Uprawnienia użytkowników", // User permissions
+  ["billing.category.guestAccounts"]: "Konta gości", // Guest accounts
+  ["billing.noPrivateSpaces"]: "Brak prywatnych przestrzeni", // No private spaces
+  ["billing.everyoneIsAdmin"]: "Wszyscy są administratorami", // Everyone is admin
+  ["billing.noGuestAccounts"]: "Brak kont gości", // No guest accounts
+  ["billing.5mbFileSizeLimit"]: "Limit rozmiaru pliku 5MB", // 5MB file size limit
+  ["billing.noFileSizeLimit"]: "Brak limitu rozmiaru pliku", // No file size limit
+  ["billing.unlimitedPrivateSpaces"]: "Nieograniczone prywatne przestrzenie", // Unlimited private spaces
+  ["billing.2Spaces"]: "2 przestrzenie", // 2 spaces
+  ["billing.adminRolesAndPermissions"]: "Role i uprawnienia administratora", // Admin roles & permissions
+  ["billing.unlimitedCards"]: "Nieograniczona liczba kart", // Unlimited cards
+  ["billing.sharePagesOnTheWeb"]: "Udostępnij strony w sieci", // Share pages on the web
+  ["billing.50Pages"]: "50 stron", // 50 pages
+  ["billing.unlimitedPages"]: "Nieograniczona liczba stron", // Unlimited pages
+  ["billing.indexPublishedPages"]: "Indeksuj opublikowane strony w wyszukiwarkach", // Index published pages in search engines
+  ["billing.privateSpaces"]: "Prywatne przestrzenie", // Private spaces
+  ["billing.timelineListAndBoardView"]: "Widok osi czasu, listy i tablicy", // Timeline, list, & board view
+  ["billing.guestAccounts"]: "Konta gości", // Guest accounts
+  ["billing.monthly"]: "Miesięcznie", // Monthly
+  ["billing.yearly"]: "Rocznie (-20%)", // Yearly (-20%)
+  ["billing.currentPlan"]: "Bieżący plan", // Current plan
+  ["billing.yourChosenPaymentMethodIs"]:
+    "Wybrana metoda płatności to %{method}", // Your chosen payment method is %{method}
+  ["billing.thisIsThePaymentMethod"]:
+    "To jest metoda płatności, której będziemy używać do przyszłych płatności. Możesz ją zmienić w dowolnym momencie.", // This is the payment method we will use for future payments. You can change it at any time.
+  ["billing.billing"]: "Faktura", // Billing
+  ["billing.planAndBilling"]: "Plan i fakturowanie", // Plan and Billing
+  ["billing.paymentMethod"]: "Metoda płatności", // Payment method
+  ["billing.cardEndingIn"]: "%{cardType} kończąca się na %{last4}", // %{cardType} ending in %{last4}
+  ["billing.manageBillingDetails"]: "Zarządzaj szczegółami faktury", // Manage billing details
+  ["billing.viewBillingDetails"]: "Zobacz szczegóły faktury", // View billing details
+  ["billing.updatePaymentDetails"]: "Zaktualizuj szczegóły płatności", // Update payment details
+  ["billing.sendNewInvoicesTo"]: "Wyślij nowe faktury do", // Send new invoices to
+  ["billing.previousInvoices"]: "Poprzednie faktury", // Previous invoices
+  ["billing.plan"]: "Plan", // Plan
+  ["billing.manageWhichPlan"]: "Zarządzaj, który plan wykorzystuje przestrzeń robocza", // Manage which plan the workspace uses
+  ["billing.standard"]: "Standard", // Standard
+  ["billing.changePlan"]: "Zmień plan", // Change plan
+  ["billing.free"]: "Darmowy", // Free
+  ["billing.upgrade"]: "Ulepsz", // Upgrade
+  ["billing.noPaymentMethod"]: "Brak metody płatności", // No payment method
+  ["billing.thereIsNoPaymentMethod"]:
+    "Nie ma metody płatności powiązanej z tą przestrzenią roboczą. Metoda płatności pojawi się tutaj po wybraniu płatnego planu.", // There is no payment method associated with this workspace. A payment method will appear here once you’ve selected a paid plan.
+  ["billing.selectAPaidPlan"]: "Wybierz płatny plan", // Select a paid plan
+  ["billing.upgradePlan"]: "Ulepsz do tego planu", // Upgrade to this plan
+  ["billing.downgradePlan"]: "Obniż do tego planu", // Downgrade to this plan
+  ["billing.downgradeToFree"]: "Obniż do darmowego", // Downgrade to free
+  ["billing.viewYourPaymentMethodInStripe"]:
+    "Zobacz swoją metodę płatności w Stripe", // View your payment method in Stripe
+  ["billing.weBillTheWorkspacePayment"]:
+    "Obciążamy metodę płatności przestrzeni roboczej, gdy zaproszenie zostaje zaakceptowane.", // We bill the workspace payment method when an invitation is accepted.
+  ["billing.checkThePlanPanel"]:
+    "Sprawdź panel planu, aby uzyskać szacunkowy koszt na miejsce.", // Check the plan panel for a per-seat cost estimate.
+  ["billing.12"]: "$12", // $12
+  ["billing.10"]: "$10", // $10
+  ["billing.perUserPerMonth"]: "/ użytkownika / miesiąc", // / user / month
+  ["billing.billedYearly"]: "rozliczane rocznie", // billed yearly
+  ["billing.planStatus"]: "Status planu", // Plan status
+  ["billing.yourCurrentPlanIsNotSetToRenew"]:
+    "Twój aktualny plan nie jest ustawiony na odnowienie", // Your current plan is not set to renew
+  ["billing.on"]: "Włączony", // On
+  ["billing.dateYourWorkspaceWillDowngrade"]:
+    "twoja przestrzeń robocza zostanie obniżona do planu Darmowego. Do tego czasu możesz nadal zapraszać ludzi do tej przestrzeni roboczej, ale nie będziesz mógł przekroczyć", // your workspace will downgrade to the Free plan. Until then you can still invite people to this workspace, but you will not be able to exceed
+  ["billing.workspaceMembers"]: "członkowie przestrzeni roboczej", // workspace members
+  ["billing.turnRenewalBackOn"]: "Włącz ponownie odnowienie", // Turn renewal back on
+  ["billing.youCanStillInvite"]:
+    "Możesz nadal zapraszać ludzi do tej przestrzeni roboczej, ale nie możesz przekroczyć", // You can still invite people to this workspace, but you cannot exceed
+  ["billing.workspaceFullError"]:
+    "Osiągnięto limit członków przestrzeni roboczej. Administrator przestrzeni roboczej może go podnieść.", // Workspace member limit reached. A workspace admin can raise it.
+  ["billing.genericJoinError"]: "Nie można dołączyć do przestrzeni roboczej.", // Could not join workspace.
+  ["billing.startsOn"]: "Zaczyna się %{date}", // Starts on %{date}
+  ["billing.switchToYearly"]: "Przełącz na roczne (-20%)", // Switch to yearly (-20%)
+  ["billing.switchToMonthly"]: "Przełącz na miesięczne", // Switch to monthly
+  ["billing.metadata"]: "Wszystko w %{plan}, plus...", // Everything in %{plan}, plus...
+  ["billing.talkToOurExperts"]: "Porozmawiaj z naszymi ekspertami", // Talk to our experts
+  ["billing.samlAndScim"]: "SAML i SCIM", // SAML & SCIM
+  ["billing.auditLogs"]: "Dzienniki audytowe", // Audit logs
+  ["billing.customBilling"]: "Niestandardowe fakturowanie", // Custom billing
+  ["billing.prioritySupport"]: "Priorytetowe wsparcie", // Priority support
+  ["billing.unlimitedChildCards"]: "Nieograniczona liczba kart podrzędnych", // Unlimited child cards
+  ["billing.publishPagesToTheWeb"]: "Opublikuj strony w sieci", // Publish pages to the web
+  ["billing.calendarLayout"]: "Układ kalendarza", // Calendar layout
+  ["billing.advancedSearch"]: "Zaawansowane wyszukiwanie", // Advanced search
+  ["billing.views"]: "Widoki", // Views
+  ["billing.timelineLayout"]: "Układ osi czasu", // Timeline layout
+  ["billing.liveChatSupport"]: "Wsparcie czatu na żywo", // Live chat support
+  // global
+  ["global.text.create"]: "Utwórz", // Create
+  ["option.label.cards"]: "Karty", // Cards
+  ["option.label.pages"]: "Strony", // Pages
+  ["option.label.boards"]: "Tablice", // Boards
+  ["option.label.epics"]: "Projekty", // Projects
+  ["option.label.spaces"]: "Przestrzenie", // Spaces
+  ["option.label.showArchived"]: "Pokaż zarchiwizowane", // Show archived
+  ["search.message.noResults"]: "Nie znaleziono", // Not found
+  ["global.text.discardDraft"]: "Odrzuć szkic", // Discard draft
+  switchAccount: "Zmień konto", // Switch account
+  all: "Wszystko", // All
+  search: "Szukaj", // Search
+  searchPlaceholder: "Szukaj lub zadaj pytanie...", // Search or ask a question...
+  close: "Zamknij", // Close
+  send: "Wyślij", // Send
+  resendInviteLink: "Wyślij ponownie link zaproszenia", // Resend invite link
+  addComment: "Dodaj komentarz", // Add a comment
+  comment: "Komentarz", // Comment
+  replyToComment: "Odpowiedz na komentarz...", // Reply to comment...
+  writeComment: "Napisz komentarz...", // Write a comment...
+  comments: "Komentarze", // Comments
+  createBoard: "Utwórz tablicę", // Create board
+  createPage: "Utwórz stronę", // Create page
+  delete: "Usuń", // Delete
+  edit: "Edytuj", // Edit
+  remove: "Usuń", // Remove
+  done: "Zrobione", // Done
+  cancel: "Anuluj", // Cancel
+  cancelAndDiscard: "Anuluj i odrzuć", // Cancel and discard
+  enterBoardTitle: "Tytuł tablicy", // Board title
+  create: "Utwórz", // Create
+  join: "Dołącz", // Join
+  couldntJoinSpace: "Nie można dołączyć do przestrzeni, spróbuj ponownie później.", // Could not join space, try again later.
+  untitled: "Bez tytułu", // Untitled
+  containsNoContent: "Nie zawiera treści.", // Contains no content.
+  ama: "AMA", // AMA (Ask Me Anything)
+  me: "Ja", // Me
+  assigned: "Przydzielone", // Assigned
+  mentions: "Wzmianki", // Mentions
+  visited: "Odwiedzone", // Visited
+  saved: "Zapisane", // Saved
+  notifications: "Powiadomienia", // Notifications
+  selectWhereWwhenWillNotified: "Wybierz, jak chcesz być powiadamiany", // Choose how you want to be notified
+  recivePersonalNotification: "Otrzymuj powiadomienia osobiste w Slack", // Receive personal notifications in Slack
+  notifyMe: "Powiadom mnie, gdy", // Notify me when
+  save: "Zapisz", // Save
+  saveChanges: "Zapisz zmiany", // Save changes
+  archived: "Zarchiwizowane", // Archived
+  archive: "Archiwum", // Archive
+  watch: "Obserwuj", // Watch
+  unwatch: "Nie obserwuj", // Unwatch
+  cardArchived: "Karta jest zarchiwizowana.", // Card is archived.
+  cardArchivedByCard: "Karta jest zarchiwizowana.", // Card is archived.
+  cardArchivedByList:
+    "Karta jest częścią zarchiwizowanej listy. Przenieś do aktywnej listy, aby przywrócić.", // Card is part of an archived list. Move to active list to restore.
+  cardArchivedByBoard:
+    "Karta jest częścią zarchiwizowanej tablicy. Przenieś do aktywnej tablicy, aby przywrócić.", // Card is part of an archived board. Move to active board to restore.
+  epicArchived: "Projekt jest zarchiwizowany.", // Project is archived.
+  epicArchivedByEpic: "Projekt jest zarchiwizowany.", // Project is archived.
+  epicArchivedByList:
+    "Projekt jest częścią zarchiwizowanej listy. Przenieś do aktywnej listy, aby przywrócić.", // Project is part of an archived list. Move to active list to restore.
+  boardArchived: "Tablica jest zarchiwizowana.", // Board is archived.
+  isArchived: "jest zarchiwizowane", // is archived
+  pageArchived: "Strona jest zarchiwizowana.", // Page is archived.
+  cellMerge: "Scalanie komórek", // Cell Merge
+  new: "Nowy", // New
+  view: "Widok", // View
+  project: "przestrzeń", // space
+  spaces: "Przestrzenie", // Spaces
+  teamId: "id zespołu", // team id
+  deleteCommentPopupMessage: "Czy na pewno chcesz usunąć ten komentarz?", // Are you sure you want to delete this comment?
+  deleteMessage: "Usuń komentarz", // Delete comment
+  archiveResource: "Archiwizuj %{type}", // Archive %{type}
+  restoreResource: "Przywróć %{type}", // Restore %{type}
+  deleteResource: "Usuń %{type}", // Delete %{type}
+  deleteSuccess: "%{name} %{type} został usunięty", // %{name} %{type} is deleted
+  archiveSuccess: "%{name} %{type} został zarchiwizowany", // %{name} %{type} is archived
+  restoreSuccess: "%{name} %{type} został przywrócony", // %{name} %{type} is restored
+  deleteError: "Nie można usunąć %{name} %{type}", // Couldn’t delete %{name} %{type}
+  archiveError: "Nie można zarchiwizować %{name} %{type}", // Couldn’t archive %{name} %{type}
+  restoreError: "Nie można przywrócić %{name} %{type}", // Couldn’t restore %{name} %{type}
+  addLink: "Dodaj link", // Add link
+  couldntDeleteComment: "Nie można usunąć komentarza, spróbuj ponownie", // Could not delete comment, please try again
+  couldntLoadComments: "Nie można załadować komentarzy.", // Could not load comments.
+  commentOnPage: "Komentarz na stronie", // Comment on page
+  emailPlaceholder: "np. you@example.com", // e.g. you@example.com
+  signOut: "Wyloguj się", // Sign Out
+  leave: "Opuszczam", // Leave
+  browseAllSpaces: "Przeglądaj wszystkie przestrzenie", // Browse All Spaces
+  preview: "Podgląd", // Preview
+  goToCard: "Przejdź do karty", // Go to card
+  zoomIn: "Powiększ", // Zoom in
+  zoomOut: "Pomniejsz", // Zoom out
+  notFoundPageHeader: "Wystąpił błąd...", // There’s been a glitch...
+  notFoundPageContent:
+    "Nie jesteśmy pewni, co poszło nie tak. Możesz wrócić lub spróbować poszukać w naszym Centrum pomocy, jeśli potrzebujesz pomocy.", // We’re not quite sure what went wrong. You can go back, or try looking on our Help Center if you need a hand.
+  addCard: "Dodaj kartę", // Add card
+  addProject: "Dodaj projekt", // Add project
+  next: "Dalej", // Next
+  addToCard: "Dodaj do karty", // Add to card
+  checklist: "Lista kontrolna", // Checklist
+  moveList: "Przenieś listę", // Move list
+  board: "Tablica", // Board
+  timeline: "Oś czasu", // Timeline
+  templates: "Szablony", // Templates
+  cardTemplates: "Szablony kart", // Card templates
+  pageTemplates: "Szablony stron", // Page templates
+  saveCardContentYouRepeatedlyUse:
+    "Zapisz treść, której często używasz, i zastosuj ją przy tworzeniu kart", // Save content you repeatedly use and apply it when you create cards
+  savePageContentYouRepeatedlyUse:
+    "Zapisz treść, której często używasz, i zastosuj ją przy tworzeniu stron", // Save content you repeatedly use and apply it when you create pages
+  createCardTemplate: "Utwórz szablon karty", // Create card template
+  editCardTemplate: "Edytuj szablon karty", // Edit card template
+  searchTemplates: "Szukaj szablonów", // Search templates
+  name: "Nazwa", // Name
+  noCardTemplates: "Brak szablonów kart", // No card templates
+  noPageTemplates: "Brak szablonów stron", // No page templates
+  calendar: "Kalendarz", // Calendar
+  showAllCards: "Pokaż wszystkie karty", // Show all cards
+  hideAllCards: "Ukryj wszystkie karty", // Hide all cards
+  showWeekends: "Pokaż weekendy", // Show weekends
+  youCanCreateATemplateAbove: "Możesz utworzyć szablon powyżej", // You can create a template above
+  youCanCreateABoardFrom: "Możesz utworzyć tablicę z paska bocznego aplikacji", // You can create a board from the app sidebar
+  createPageTemplate: "Utwórz szablon strony", // Create page template
+  editPageTemplate: "Edytuj szablon strony", // Edit page template
+  templateNameAndIcon: "Nazwa szablonu i ikona", // Template name and icon
+  thisIsHowPeopleFindTemplate: // This is how people find templates
+  "This is how people will find your template later": "W ten sposób ludzie będą znajdować twój szablon później", // This is how people will find your template later
+  shortAndDescriptive: "Krótki i opisowy", // Short and descriptive
+  templateNameCannotBeEmpty: "Nazwa szablonu nie może być pusta", // Template name cannot be empty
+  templateSpace: "Przestrzeń szablonu", // Template space(s)
+  whichSpacesWillThisTemplateBeAvailableIn:
+    "W których przestrzeniach ten szablon będzie dostępny?", // Which spaces will this template be available in?
+  templateSpaceShouldHaveAtLeastOneSpaceSelected:
+    "Przestrzeń szablonu powinna mieć zaznaczoną przynajmniej jedną przestrzeń", // Template space should have at least one space selected
+  noSpacesFound: "Nie znaleziono przestrzeni.", // No spaces found.
+  allSpaces: "Wszystkie przestrzenie", // All spaces
+  peopleWillBeAbleToEditThisAfterTheyApplyTheTemplate:
+    "Ludzie będą mogli edytować to po zastosowaniu szablonu", // People will be able to edit this after they apply the template
+  theseWillBeAddedToTheCardYouApplyTheTemplateTo:
+    "Te zostaną dodane do karty, do której zastosujesz szablon", // These will be added to the card you apply the template to
+  taskDescription: "Opis karty", // Card description
+  pageBody: "Treść strony", // Page body
+  saveTemplate: "Zapisz szablon", // Save template
+  templateNotFound: "Nie znaleziono szablonu", // Template not found
+  addAssignees: "Dodaj przypisania", // Add assignees
+  setTags: "Ustaw tagi", // Set tags
+  selectAll: "Wybierz wszystko", // Select all
+  createInThisBoard: "Utwórz w tej tablicy", // Create in this board
+  setThisStatus: "Ustaw ten status", // Set this status
+  chooseABoard: "Wybierz tablicę", // Choose a board
+  chooseABoardToUseThisField: "Wybierz tablicę, aby użyć tego pola", // Choose a board to use this field
+  ifYouLeaveThisPageAnyChangesWillBeLost:
+    "Jeśli opuścisz tę stronę, wszelkie zmiany wprowadzone w tym szablonie zostaną utracone.", // If you leave this page, any changes you’ve made to this template will be lost.
+  uploadFailedClickToRetry: "Przesyłanie nie powiodło się, kliknij, aby spróbować ponownie", // Upload failed, click to retry
+  areYouSureYouWantToDeleteTheTemplate:
+    'Czy na pewno chcesz usunąć szablon "%{templateName}"?', // Are you sure you want to delete the "%{templateName}" template?
+  applyTemplate: "Zastosuj szablon", // Apply template
+  noTemplates: "Brak szablonów.", // No templates.
+  manageTemplates: "Zarządzaj szablonami", // Manage templates
+  uploadFilesForTemplatesIsDisabled: "Przesyłanie plików jest wyłączone w szablonach", // File uploads are disabled in templates
+  uploadFilesIsDisabled: "Przesyłanie plików jest wyłączone", // File uploads are disabled
+  noTagsFoundSelectBoardToSeeTags:
+    "Nie znaleziono tagów. Wybierz tablicę, aby zobaczyć dostępne tagi w tej przestrzeni lub", // No tags found. Select a board to see tags available in that space, or
+  createNewWorkspaceTagInSettings: "utwórz nowy tag przestrzeni roboczej w ustawieniach.", // create a new workspace tag in settings.
+  noTitle: "Brak tytułu", // No title
+  addChecklist: "Dodaj listę kontrolną", // Add checklist
+  title: "Tytuł", // Title
+  add: "Dodaj", // Add
+  addItem: "Dodaj nowy element", // Add new item
+  archiveList: "Archiwizuj listę", // Archive list
+  actions: "Akcje", // Actions
+  reply: "Odpowiedz...", // Reply...
+  replies: "Odpowiedzi", // Replies
+  description: "Opis", // Description
+  cardDescriptionPlaceholder: "Napisz opis...", // Write a description...
+  templateDescriptionPlaceholder: "Wprowadź opis...", // Enter a description...
+  card: "Karta", // Card
+  space: "Przestrzeń", // Space
+  page: "Strona", // Page
+  workspaceLabel: "Wprowadź nazwę przestrzeni roboczej", // Enter workspace name
+  workspacePlaceholder: "Nazwa przestrzeni roboczej", // Workspace name
+roboto: "Roboto", // Roboto
+sansserif: "Bezszeryfowy", // Sans Serif
+serif: "Szeryfowy", // Serif
+mono: "Mono", // Mono
+monospace: "Monospace", // Monospace
+download: "Pobierz", // Download
+move: "Przenieś", // Move
+background: "Tło", // Background
+share: "Udostępnij", // Share
+upload: "Prześlij", // Upload
+paste_image_link: "Wklej link do obrazu", // Paste image link
+embed_image: "Osadź obraz", // Embed image
+drag_and_drop: "Przeciągnij i upuść", // Drag and drop
+supported_files: "Obsługiwane pliki", // Supported files
+maximum_size: "Maksymalny rozmiar", // Maximum size
+createNewPage: "Utwórz nową stronę", // Create new page
+createNewBoard: "Utwórz nową tablicę", // Create new board
+newPage: "Nowa strona", // New page
+addNewPage: "Dodaj nową stronę", // Add new page
+newBoard: "Nowa tablica", // New board
+addNewBoard: "Dodaj nową tablicę", // Add new board
+oneColumn: "1 kolumna", // 1 column
+twoColumns: "2 kolumny", // 2 columns
+previewStillUpdating: "Podgląd nadal się aktualizuje...", // Preview still updating...
+emptyPage: "Pusta strona", // Empty page
+searchSuperthread: "Szukaj Superthread", // Search Superthread
+attachFrom: "Dołącz z...", // Attach from...
+searchUnsplash: "Szukaj Unsplash", // Search Unsplash
+fullWidth: "Pełna szerokość", // Full width
+largeText: "Duży tekst", // Large text
+space___: "Przestrzeń...", // Space...
+cannotExcludeAll: "Nie można wykluczyć wszystkich", // Cannot exclude all
+mustIncludeAtLeastOne: "Musisz uwzględnić przynajmniej jeden", // Must include at least one
+type: "Typ", // Type
+noResultsFound: "Nie znaleziono wyników", // No results found
+cardStatus: "Status karty", // Card status
+makeItPrivate: "Uczyń to prywatnym", // Make it private
+thisSpaceIsPrivate: 
+"Ta przestrzeń jest prywatna", // This space is private
+privateSpaceDescription: "Kiedy przestrzeń jest ustawiona na prywatną, można do niej dołączyć tylko na zaproszenie.", // When a space is set to private, it can only be joined by invitation.
+boards: "Tablice", // Boards
+hiddenMember: "Ukryty członek", // Hidden member
+hiddenMemberDesc: "Ta osoba nie dzieli się żadnymi przestrzeniami z Tobą", // This person does not share any spaces with you
+linkTextLabel: "Tekst", // Text
+linkUrlLabel: "Link", // Link
+linkTextPlaceholder: "Dodaj tekst...", // Add text...
+linkUrlPlaceholder: "Dodaj link...", // Add link...
+editList: "Edytuj listę", // Edit list
+copyList: "Kopiuj listę", // Copy List
+sortBy: "Sortuj według", // Sort by
+moveAllCards: "Przenieś wszystkie karty", // Move all cards
+archiveAllCards: "Zarchiwizuj wszystkie karty", // Archive all cards
+enterResourceTitle: "Wpisz tytuł %{type}...", // Enter %{type} title...
+open: "Otwórz", // Open
+openCardInBoard: "Otwórz kartę w tablicy", // Open card in board
+editTitle: "Edytuj tytuł", // Edit title
+editTags: "Edytuj tagi", // Edit tags
+editMembers: "Edytuj członków", // Edit members
+copy: "Kopiuj", // Copy
+attachment: "Załącznik", // Attachment
+startDate: "Data rozpoczęcia", // Start date
+dueDate: "Termin", // Due date
+cover: "Okładka", // Cover
+tags: "Tagi", // Tags
+activity: "Aktywność", // Activity
+created: "Utworzono", // Created
+updated: "Zaktualizowano", // Updated
+timePeriod: "Okres czasu", // Time period
+cardsAdded: "Dodane karty", // Cards added
+cardsFinished: "Zakończone karty", // Cards finished
+netChange: "Zmienność netto", // Net change
+last7Days: "Ostatnie 7 dni", // Last 7 days
+last14Days: "Ostatnie 14 dni", // Last 14 days
+last30Days: "Ostatnie 30 dni", // Last 30 days
+cardsAddedBetween: "Unikalne karty dodane między", // Unique cards added between
+cardsAddedTo: "Unikalne karty dodane do", // Unique cards added to
+between: "między", // between
+deletedCards: "Usunięte karty zmniejszają liczbę", // Deleted cards reduce the count
+moreCardsAddedThanFinished: "%{number} więcej kart zostało dodanych niż zakończonych", // %{number} more cards were added than finished
+sameNumberOfCardsAddedAndFinished: 
+"Taka sama liczba kart została dodana i zakończona", // The same number of cards were added and finished
+moreCardsFinishedThanAdded: "%{number} więcej kart zostało zakończonych niż dodanych", // %{number} more cards were finished than added
+oneMoreCardAddedThanFinished: "1 więcej karta została dodana niż zakończona", // 1 more card was added than finished
+oneMoreCardFinishedThanAdded: "1 więcej karta została zakończona niż dodana", // 1 more card was finished than added
+convertToCard: "Przekształć w kartę", // Convert to card
+searchForTag: "Szukaj tagu", // Search for tag
+createTag: "Utwórz tag", // Create tag
+tagName: "Nazwa tagu", // Tag name
+editTagName: "Edytuj nazwę tagu", // Edit tag name
+hideCheckedItems: "Ukryj zaznaczone elementy", // Hide checked items
+showCheckedItems: "Pokaż zaznaczone elementy", // Show checked items
+deleteChecklist: "Usuń listę kontrolną", // Delete checklist
+attachments: "Załączniki", // Attachments
+versionHistory: "Historia wersji", // Version History
+profile: "Profil", // Profile
+settings: "Ustawienia", // Settings
+email: "Email", // Email
+firstNamePlaceholder: "Wpisz imię", // Enter first name
+lastNamePlaceholder: "Wpisz nazwisko", // Enter last name
+displayNamePlaceholder: "Wpisz nazwę wyświetlaną", // Enter display name
+profileBasicInfoSubtitle: "Informacje osobiste i kontaktowe", // Personal and contact info
+uploadProfileImageRule:"Obraz powinien być w formacie PNG, GIF lub JPG o maksymalnym rozmiarze 3MB. Będzie wyświetlany jako twój avatar w aplikacji.", // Image should be PNG, GIF or JPG format no larger than 3MB. This will be shown as your avatar across the app.
+workspaceLogo: "Wybierz logo przestrzeni roboczej. Zalecany rozmiar to 256x256px", // Pick a workspace logo. Recommended size is 256x256px
+logoSaved: "Logo zapisane", // Logo saved
+logoRemoved: "Logo usunięte", // Logo removed
+removeCover: "Usuń okładkę", // Remove cover
+uploadCoverImage: "Prześlij obraz okładki", // Upload cover image
+list: "Lista", // List
+addChildCard: "Dodaj kartę podrzędną", // Add child card
+searchForCard: "Szukaj istniejącej karty", // Search for existing card
+newChildCard: "Utwórz nową kartę podrzędną", // Create new child card
+cancelSearch: "Anuluj wyszukiwanie", // Cancel search
+computer: "Komputer", // Computer
+setDueDate: "Ustaw termin", // Set due date
+months: "Styczeń,Luty,Marzec,Kwiecień,Maj,Czerwiec,Lipiec,Sierpień,Wrzesień,Październik,Listopad,Grudzień", // January,February,March,April,May,June,July,August,September,October,November,December
+monthsAbbreviation: "Sty,Lut,Mar,Kwi,Maj,Cze,Lip,Sie,Wrz,Paź,Lis,Gru", // Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec
+daysAbbreviation: "PN,WT,ŚR,CZ,PI,SO,ND", // MO,TU,WE,TH,FR,SA,SU
+daysAbbreviationLong: "Pon,Wt,Wt,Czw,Pt,Sob,Ndz", // Mon,Tue,Wed,Thu,Fri,Sat,Sun
+weekDays: "Poniedziałek,Wtorek,Środa,Czwartek,Piątek,Sobota,Niedziela", // Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday
+time: "Czas", // Time
+dueDateReminder: "Przypomnienie o terminie", // Due date reminder
+weekBefore: "Tydzień przed", // Week before
+daysBefore: "Dni przed", // Days before
+dayBefore: "Dzień przed", // Day before
+hoursBefore: "Godziny przed", // Hours before
+hourBefore: "Godzina przed", // Hour before
+onTime: "Na czas", // On time
+none: "Brak", // None
+due: "Termin", // Due
+insertFile: "Wstaw plik", // Insert file
+addImage: "Dodaj obraz", // Add image
+edited: "edytowane", // edited
+insert: "Wstaw", // Insert
+overdue: "Przeterminowane", // Overdue
+continue: "Kontynuuj", // Continue
+createdBy: "Utworzone przez", // Created by
+press: "Naciśnij", // Press
+toClose: "aby zamknąć", // to close
+cards: "Karty", // Cards
+on: "na", // on
+useArrowKeys: "Użyj klawiszy strzałek", // Use arrow keys
+toNavigate: "aby nawigować, wybierz za pomocą", // to navigate, select with
+sending: "Wysyłanie linku zaproszenia...", // Sending invite link..
+inviteDoesntExist: "Link zaproszenia nie istnieje.", // Invite link doesn’t exist.
+couldntResendLink: "Nie udało się ponownie wysłać linku zaproszenia.", // Couldn’t resend the invite link.
+newInviteLinkSent: "Wysłaliśmy Ci nowy link zaproszenia, sprawdź swoją pocztę.", // We sent you a new invite link, please check your email.
+inviteLinkAccepted: "Link zaproszenia już zaakceptowany.", // Invite link already accepted.
+inviteNoLongerValid: "Link zaproszenia nie jest już ważny. Proszę poproś o nowy link zaproszenia.", // Invite link is no longer valid. Please request a new invite link.
+inviteCodeIncorrect: "Niepoprawny link zaproszenia. Kliknij poniżej, aby ponownie wysłać.", // Incorrect invite link. Click below to resend.
+thereAreNoFreeSeatsForThisWorkspace: "Nie ma wolnych miejsc w tej przestrzeni roboczej", // There are no free seats for this workspace
+thisWorkspaceCantAcceptAnyMoreMembers: "Ta przestrzeń robocza nie może przyjąć więcej członków. Administrator przestrzeni roboczej może zwiększyć limit lub istniejący członek może opuścić przestrzeń roboczą, aby zwolnić miejsce.", // This workspace cannot accept any more members. A workspace admin can raise the limit, or an existing member can leave the workspace to open a seat.
+spaceAccess: "Dostęp do przestrzeni", // Space access
+changeToPrivateSpace: "Wszyscy istniejący członkowie tej przestrzeni nadal będą członkami po jej ustawieniu na prywatną. Nowi członkowie nie będą mogli dołączyć, chyba że zostaną zaproszeni.", // All existing members of this space will still be members after it is made private. No new members will be able to join unless they are invited.
+changeToOpenSpace: "Wszyscy członkowie przestrzeni roboczej będą mogli znaleźć i dołączyć do tej przestrzeni oraz zobaczyć jej zawartość.", // All members of the workspace will be able to find and join this space, and see its contents.
+changeToPrivate: "Zmień na prywatne", // Change to private
+changeToOpen: "Zmień na otwarte", // Change to open
+changeToPrivateSpaceTitle: "Zmień na przestrzeń prywatną?", // Change to private space?
+changeToOpenSpaceTitle: "Zmień na przestrzeń otwartą?", // Change to open space?
+ownersAdminsCreatorOfSpace: "Tylko właściciele przestrzeni roboczej, administratorzy i twórca przestrzeni mogą zmienić to ustawienie", // Only workspace owners, admins, and the creator of the space can change this setting
+member: "Członek", // Member
+notMember: "Nie członek", // Not a member
+links: "Linki", // Links
+createNewView: "Utwórz widok", // Create view
+newView: "Nowy widok", // New view
+workspace: "Przestrzeń robocza", // Workspace
+views: "Widoki", // Views
+roadmap: "Mapa drogowa", // Roadmap
+myViews: "Moje widoki", // My views
+workspaceViews: "Widoki przestrzeni roboczej", // Workspace views
+private: "Prywatny", // Private
+lastUpdate: "Ostatnia aktualizacja", // Last update
+viewType: "Typ widoku", // View type
+filters: "Filtry", // Filters
+filter___: "Filtr...", // Filter...
+filters___: "Filtry...", // Filters...
+filterBy: "Filtruj według", // Filter by
+filter: "Filtruj", // Filter
+Content = "zawartość", // content
+Status = "status", // status
+Subscriber = "subskrybent", // subscriber
+Creator = "twórca", // creator
+Tag = "tag", // tag
+Subscribers = "subskrybenci", // subscribers
+Creators = "twórcy", // creators
+ShareWithWorkspace = "udziel z przestrzenią roboczą", // shareWithWorkspace
+Discard = "porzuć", // discard
+PageTitlePlaceholder = "placeholderTytułuStrony", // pageTitlePlaceholder
+MarkAllAsRead = "Oznacz jako przeczytane", // markAllAsRead
+AddTo = "Dodaj do", // addTo
+RemoveFrom = "Usuń z", // removeFrom
+MovedTo = "Przeniesione do", // movedTo
+NotificationCreated = "powiadomienieUtworzone", // notificationCreated
+NotificationAdded = "powiadomienieDodane", // notificationAdded
+Commented = "skomentowano", // commented
+Mentioned = "wspomniano", // mentioned
+DropFilesLabel = "Upuść pliki tutaj", // dropFilesLabel
+Back = "Wstecz", // back
+TypeContent = "Wpisz treść", // typeContent
+HasDueDate = "Ma termin", // hasDueDate
+DueSoon = "Wkrótce termin", // dueSoon
+DueToday = "Termin dzisiaj", // dueToday
+Epic = "Projekt", // epic
+Epics = "Projekty", // epics
+SearchForEpic = "Szukaj projektu", // searchForEpic
+ChangedEpicFrom = "Zmieniono projekt z", // changedEpicFrom
+AddedToEpicCard = "Dodano do karty projektu", // addedToEpicCard
+RemovedFromEpicCard = "Usunięto z karty projektu", // removedFromEpicCard
+EpicInherited = "Projekt odziedziczony", // epicInherited
+UntitledView = "Widok bez tytułu", // untitledView
+CannotSaveUntitledView = "Nie można zapisać widoku bez tytułu", // cannotSaveUntitledView
+ViewSaved = "Widok zapisany", // viewSaved
+PagePlaceholder = "placeholderStrony", // pagePlaceholder
+NewViewTitele = "Tytuł nowego widoku", // newViewTitle
+GlobalPlaceholderPagePlaceholder = "global.placeholder.pagePlaceholder", // global.placeholder.pagePlaceholder
+GlobalPlaceholderFocusedStatePlaceholder = "global.placeholder.focusedStatePlaceholder", // global.placeholder.focusedStatePlaceholder
+GlobalPlaceholderFocusedStatePlaceholderMobile = "global.placeholder.focusedStatePlaceholderMobile", // global.placeholder.focusedStatePlaceholderMobile
+CheckListItemPlaceholder = "placeholderElementuListy", // checkListItemPlaceholder
+ViewAll = "Zobacz wszystko", // viewAll
+FilterByUnread = "Filtruj według nieprzeczytanych", // filterByUnread
+PagePublished = "Strona opublikowana", // pagePublished
+Restore = "Przywróć", // restore
+CardPathArchivedBoard = "ścieżkaKartyArchiwumTablicy", // cardPathArchivedBoard
+RestoreMakeChange = "przywróćZmień", // restoreMakeChange
+BoardUpdated = "Tablica zaktualizowana", // boardUpdated
+DefaultBoardLayoutChangedTo = "Domyślny układ tablicy zmieniony na", // defaultBoardLayoutChangedTo
+Esc = "Esc", // esc
+Assignee = "Przydzielony", // assignee
+Assignees = "Przydzieleni", // assignees
+NoAssignee = "Brak przydzielonego", // no_assignee
+FindMembers = "Znajdź członków", // findMembers
+InviteExternalPeople = "Zaproś osoby zewnętrzne", // inviteExternalPeople
+NotInThisSpace = "Nie w tej przestrzeni", // notInThisSpace
+InThisSpace = "W tej przestrzeni", // inThisSpace
+NotWorkspaceMember = "Ta osoba nie jest członkiem przestrzeni roboczej", // notWorkspaceMember
+AnchorLinkErrorMessage = "Nie można znaleźć tego linku", // anchorLinkErrorMessage
+ChildCard = "Karta podrzędna", // childCard
+ParentCards = "Karty nadrzędne", // parentCards
+Blocking = "Blokowanie", // blocking
+Blocked = "Zablokowane", // blocked
+Favourites = "Ulubione", // favourites
+DragOr = "Przeciągnij lub", // dragOr
+SomethingHere = "coś tutaj", // somethingHere
+LinkCopiedToClipboard = "Link skopiowany do schowka.", // linkCopiedToClipboard
+Tomorrow = "Jutro", // tomorrow
+InvitationsSent = "Wysłane zaproszenia", // invitationsSent
+InvitationsFailed = "Wysyłanie zaproszeń nie powiodło się", // invitationsFailed
+Retry = "Spróbuj ponownie", // retry
+Undo = "Cofnij", // undo
+BoardMovedToSpace = "Tablica przeniesiona do przestrzeni", // boardMovedToSpace
+PageMovedToSpace = "Strona przeniesiona do przestrzeni", // pageMovedToSpace
+BoardNotMoved = "Przeniesienie tablicy anulowane.", // boardNotMoved
+PageNotMoved = "Przeniesienie strony anulowane.", // pageNotMoved
+NewTag = "Nowy tag", // newTag
+TagExists = "Tag już istnieje", // tagExists
+ToggleSection = "Przełącz sekcję", // toggleSection
+ToggleContent = "Pusta sekcja. Kliknij, aby napisać lub skopiować zawartość tutaj.", // toggleContent
+RemoveChildCardFail = "Nie udało się usunąć karty podrzędnej", // removeChildCardFail
+MoveChildCardFail = "Nie udało się przenieść karty podrzędnej", // moveChildCardFail
+AddChildCardFail = "Nie udało się dodać karty podrzędnej", // addChildCardFail
+CantRemoveMembers = "Nie można usunąć członków z domyślnej przestrzeni", // cantRemoveMembers
+CantRemoveMembersFromSpace = "Nie można usunąć członków z tej przestrzeni", // cantRemoveMembersFromSpace
+CannotModifyMembers = "Nie masz uprawnień do zmiany członków", // cannotModifyMembers
+InactiveMembersCannotBeAdded = "Nieaktywnych członków nie można dodać do przestrzeni", // inactiveMembersCannotBeAdded
+Duplicate = "Duplikat", // duplicate
+SetParentCard = "Ustaw kartę nadrzędną", // setParentCard
+DuplicateCard = "Duplikuj kartę", // duplicateCard
+DuplicateBoard = "Duplikuj tablicę", // duplicateBoard
+DuplicateBoardDescription = "Karty na tej tablicy nie będą duplikowane. Wybierz przestrzeń i nazwę dla zduplikowanej tablicy.", // duplicateBoardDescription
+DuplicateTo = "Duplikuj do", // duplicateTo
+DuplicateDefaultTitle = "Wprowadź nowy tytuł (domyślnie oryginalny)", // duplicateDefaultTitle
+Duplicates = "Duplikaty", // duplicates
+DuplicateOf = "Duplikat", // duplicateOf
+MarkAsBlockedBy = "Oznacz jako zablokowane przez", // markAsBlockedBy
+MarkAsBlocking = "Oznacz jako blokujące", // markAsBlocking
+MarkAsRelatedTo = "Oznacz jako związane z", // markAsRelatedTo
+MarkAsDuplicateOf = "Oznacz jako duplikat", // markAsDuplicateOf
+Blocks = "Bloki", // blocks
+BlockedBy = "Zablokowane przez", // blockedBy
+Related = "powiązane", // related
+RelatedCards = "powiązaneKarty", // relatedCards
+MarkedCardAsBlocking = "oznaczonoKartęJakoBlokującą", // markedCardAsBlocking
+MarkedCardAsBlockedBy = "oznaczonoKartęJakoZablokowanąPrzez", // markedCardAsBlockedBy
+MarkedCardAsRelated = "oznaczonoKartęJakoPowiązaną", // markedCardAsRelated
+MarkedCardAsDuplicate = "oznaczonoKartęJakoDuplikat", // markedCardAsDuplicate
+RemovedCardRelationship = "usuniętoRelacjęKarty", // removedCardRelationship
+NoListsInBoard = "brakListWTablicy", // noListsInBoard
+NoBoardsInSpace = "brakTablicWPrzestrzeni", // noBoardsInSpace
+NoBoardsInThisSpace = "brakTablicWTejPrzestrzeni", // noBoardsInThisSpace
+EmptyList = "Pusta lista", // emptyList
+CardDuplicated = "Karta zduplikowana", // cardDuplicated
+BoardDuplicated = "Tablica zduplikowana", // boardDuplicated
+ViewDuplicated = "Widok zduplikowany", // viewDuplicated
+ViewDeleted = "Widok usunięty", // viewDeleted
+CardDuplicateFailed = "Nie udało się zduplikować karty", // cardDuplicateFailed
+BoardDuplicateFailed = "Nie udało się zduplikować tablicy", // boardDuplicateFailed
+ViewDuplicateFailed = "Nie udało się zduplikować widoku", // viewDuplicateFailed
+CantUndoneAction = "Nie można cofnąć tej akcji", // cantUndoneAction
+EachSpaceCanContain = "Każda przestrzeń może zawierać", // eachSpaceCanContain
+BrowseSpaces = "Przeglądaj przestrzenie", // browseSpaces
+PopupSpaceDescription = "opisPrzestrzeniPopup", // popupSpaceDescription
+EachSpaceCanContainMultiple = "Każda przestrzeń może zawierać wiele", // eachSpaceCanContainMultiple
+PagesLowercase = "strony", // pagesLowercase
+KanbanBoards = "tabliceKanban", // kanbanBoards
+And = "i", // and
+RemoveFromParent = "usuńZRodzica", // removeFromParent
+RemoveChildCard = "usuńKartęPodrzędną", // removeChildCard
+ChangeCardParent = "zmieńRodzicaKarty", // changeCardParent
+ChangeParent = "zmieńRodzica", // changeParent
+ChangeParentDescription = "Ta karta ma “%{card_title}” jako rodzica. Czy chcesz zmienić rodzica na obecną kartę?", // changeParentDescription
+EditChildCardDetails = "Edytuj szczegóły karty podrzędnej", // editChildCardDetails
+CopyLink = "Kopiuj link", // copyLink
+ChildCardTitleNotUpdated = "Tytuł karty podrzędnej nie został zaktualizowany", // childCardTitleNotUpdated
+AddNewChildCard = "Dodaj nową kartę podrzędną", // addNewChildCard
+EnterCardTitleOrFind = "Wpisz tytuł karty lub znajdź istniejące karty", // enterCardTitleOrFind
+CreateNewCard = "Utwórz nową kartę", // createNewCard
+UnsplashImage = "obrazUnsplash", // unsplashImage
+ShareToWeb = "Udostępnij w sieci", // shareToWeb
+PublishesSubpagesButNoComments = "Publikuje podstrony, ale nie komentarze", // publishesSubpagesButNoComments
+PageIsSharedToWeb = "Strona jest udostępniona w sieci", // pageIsSharedToWeb
+Shared = "Udostępnione", // shared
+OpenSharedPage = "Otwórz udostępnioną stronę", // openSharedPage
+PageIsSetToPrivate = "Strona jest ustawiona na prywatną", // pageIsSetToPrivate
+ProfileSettings = "Ustawienia profilu", // profileSettings
+SwitchWorkspace = "Przełącz przestrzeń roboczą", // switchWorkspace
+ArchivedItems = "Zarchiwizowane elementy", // archivedItems
+LogOut = "Wyloguj się", // logOut
+HelpFeedback = "Pomoc i opinie", // helpFeedback
+Help = "Pomoc", // help
+JoinSlack = "Dołącz do naszej społeczności na Slacku", // joinSlack
+AskQuestions = "Zadawaj pytania i pomagaj innym", // askQuestions
+ContactUs = "Skontaktuj się z nami", // contactUs
+LetUsKnow = "Daj nam znać, jeśli wystąpił problem lub pytanie", // letUsKnow
+Assign = "Przydziel", // assign
+PageIsNoLongerShared = "Strona nie jest już udostępniana w sieci", // pageIsNoLongerShared
+Favourite = "Ulubione", // favourite
+Unfavourite = "Usuń z ulubionych", // unfavourite
+AllowSearchEngines = "Zezwól wyszukiwarkom na indeksowanie tej strony", // allowSearchEngines
+SearchEngineIndexing = "Indeksowanie przez wyszukiwarki", // searchEngineIndexing
+SearchIndexingEnabled = "Indeksowanie włączone", // searchIndexingEnabled
+SearchIndexingDisabled = "Indeksowanie wyłączone", // searchIndexingDisabled
+AttachIconFrom = "Dołącz ikonę z...", // attachIconFrom
+AddIcon = "Dodaj ikonę", // addIcon
+AddCoverImage = "Dodaj obraz okładki", // addCoverImage
+PageDuplicated = "Strona zduplikowana", // pageDuplicated
+PageDuplicateFailed = "Nie udało się zduplikować strony", // pageDuplicateFailed
+CopyOf = "Kopia", // copyOf
+DisplayNameDescription = "To może być twoje imię lub pseudonim. Będzie wyświetlane w aplikacji.", // displayNameDescription
+EmbedVideo = "Osadź film wideo", // embedVideo
+RemovePullRequest = "Usuń pull request", // removePullRequest
+ViewOnGitHub = "Zobacz na GitHubie", // viewOnGitHub
+SetUpGHIntegration = "Skonfiguruj integrację z GitHub", // setUpGHIntegration
+IntegrateSuperthread = "Zintegruj Superthread z ulubionym klientem git.", // integrateSuperthread
+GithubIntegradionDescripiton = "Połącz karty Superthread z pull requestami GitHub. Wprowadź identyfikator karty Superthread (np. C-123) w nazwie swojej gałęzi lub tytule pull requestu, aby automatycznie pokazać status PR w karcie.", // githubIntegradionDescripiton
+ConnectGithub = "Połącz GitHub", // connectGithub
+ConnectedAccounts = "Połączone konta", // connectedAccounts
+ConnectGhToSuperthread = "GitHub połączony z Superthread", // connectGhToSuperthread
+EnabledBy = "Włączone przez", // enabledBy
+Select = "Wybierz", // select
+Integrations = "Integracje", // integrations
+Importer = "Importer", // importer
+Github = "GitHub", // github
+GithubPullRequest = "GitHub", // github_pull_request
+Gitlab = "GitLab", // gitlab
+Jira = "Jira", // jira
+Trello = "Trello", // trello
+ImportFrom = "Importuj z", // importFrom
+SelectYour = "Wybierz swój", // selectYour
+UsersToSuperthreadUsers = "użytkownicy do użytkowników Superthread", // usersToSuperthreadUsers
+Issues = "problemy", // issues
+Teams = "zespoły", // teams
+SetUpImport = "Skonfiguruj import", // setUpImport
+ImportHistory = "Historia importu", // importHistory
+ImportBoards = "Importuj tablice", // importBoards
+SelectWhichBoards = "Wybierz, które tablice", // selectWhichBoards
+RunImport = "Uruchom import", // runImport
+QuickImport = "Szybki import", // quickImport
+ImportBoardIntoExsistingSpace = "Importuj tablicę do istniejącej przestrzeni", // importBoardIntoExsistingSpace
+Start = "Rozpocznij", // start
+Started = "Rozpoczęto", // started
+DontImport = "Nie importuj", // DontImport
+Map = "Mapa", // map
+DontImportUsers = "Nie importuj użytkowników", // dontImportUsers
+ImportUsers = "Importuj użytkowników", // ImportUsers
+ImportAs = "Importuj jako...", // importAs
+SelectUser = "Wybierz użytkownika", // selectUser
+InviteByEmail = "Zaproś przez e-mail", // inviteByEmail
+Users = "Użytkownicy", // users
+Options = "Opcje", // options
+ChooseAditionslOptions = "Wybierz dodatkowe opcje", // chooseAditionslOptions
+ImportAttachments = "Importuj załączniki", // importAttachments
+IncludeCardCoverImages = "Uwzględnij obrazy okładek kart",
+ImportInProgress = "Import jest w trakcie", // importInProgress
+ImportError = "Wystąpił błąd podczas importu", // importError
+ImportSuccess = "Import został zakończony pomyślnie", // importSuccess
+ImportUnstarted = "Import nie został jeszcze rozpoczęty", // importUnstarted
+TimeStarted = "Czas rozpoczęcia operacji", // timeStarted
+Completed = "Operacja została ukończona", // completed
+ShowCompleted = "Wyświetl ukończone elementy", // showCompleted
+Details = "Szczegóły dotyczące elementu", // details
+Finish = "Zakończ działanie", // finish
+ValidEmail = "Podaj ważny adres e-mail", // validEmail
+EmailAdresses = "Lista adresów e-mail", // emailAdresses
+Person1Email = "E-mail dla pierwszej osoby", // person1Email
+AddToSpaces = "Dodaj do wybranych przestrzeni", // addToSpaces
+AddSpaces = "Dodaj nowe przestrzenie", // addSpaces
+BrowseProjects = "Przeglądaj dostępne projekty", // browseProjects
+CreateAndBrowseSpaces = "Twórz i przeglądaj przestrzenie", // createAndBrowseSpaces
+NameIsRequired = "Nazwa jest wymagana do kontynuacji", // nameIsRequired
+NoProjectFound = "Nie znaleziono żadnego projektu", // noProjectFound
+MemberExplanation = "Wyjaśnienie dla członka", // memberExplanation
+AdminExplanation = "Wyjaśnienie dla administratora", // adminExplanation
+GuestExplanation = "Wyjaśnienie dla gościa", // guestExplanation
+Connect = "Nawiąż połączenie", // connect
+SelectBoardImport = "Wybierz tablicę do importu", // selectBoardImport
+SelectUsersImport = "Wybierz użytkowników do importu", // selectUsersImport
+NotImportArchivedIssues = "Nie importuj zarchiwizowanych problemów", // notImportArchivedIssues
+ImportTasksIntoSuperthread = "Importuj zadania do Superthread", // importTasksIntoSuperthread
+ConnectAccount = "Połącz swoje konto", // connectAccount
+CompletedOn = "Zakończono w dniu", // completedOn
+ImportedBy = "Zaimportowane przez użytkownika", // importedBy
+TimeCreated = "Czas utworzenia elementu", // timeCreated
+CreatedDate = "Data utworzenia elementu", // createdDate
+UpdatedDate = "Data ostatniej aktualizacji", // updatedDate
+NumberOfImportedBoards = "Liczba zaimportowanych tablic", // numberOfImportedBoards
+NumberOfImportedUsers = "Liczba zaimportowanych użytkowników", // numberOfImportedUsers
+ImportingIsFinished = "Importowanie zakończone.", // importingIsFinished
+Importing = "Importowanie w toku.", // importing
+SelectService = "Wybierz usługę do połączenia.", // selectService
+Account = "Zarządzaj swoim kontem.", // account
+Importers = "Lista importerów.", // importers
+General = "Ogólne ustawienia.", // general
+ManageWorkspaceSettings = "Zarządzaj ustawieniami przestrzeni roboczej.", // manageWorkspaceSettings
+AvatarAppearance = "Wygląd avatara.", // avatarAppearance
+UploadImage = "Prześlij nowy obraz.", // uploadImage
+SuccessfullySaved = "Pomyślnie zapisano zmiany.", // successfullySaved
+ErrorSave = "Wystąpił błąd podczas zapisu.", // errorSave
+CopyURL = "Kopiuj adres URL.", // copyURL
+CopyUrl = "Kopiuj ten adres URL.", // copyUrl
+CopyCardUrl = "Kopiuj adres URL karty.", // copyCardUrl
+CopyPageUrl = "Kopiuj adres URL strony.", // copyPageUrl
+CopyBoardUrl = "Kopiuj adres URL tablicy.", // copyBoardUrl
+CopySpaceUrl = "Kopiuj adres URL przestrzeni.", // copySpaceUrl
+CopyGitBranchNameToClipboard = "Kopiuj nazwę gałęzi Gita do schowka.", // copyGitBranchNameToClipboard
+CopyGitBranchName = "Kopiuj nazwę gałęzi Gita.", // copyGitBranchName
+BranchCopiedToClipboard = "Nazwa gałęzi została skopiowana do schowka.", // branchCopiedToClipboard
+Subscribe = "Zapisz się na powiadomienia.", // subscribe
+Unsubscribe = "Zrezygnuj z subskrypcji.", // unsubscribe
+PullRequestAutomation = "Automatyzacja Pull Request.", // pullRequestAutomation
+PrAutomationDescription = "Opis automatyzacji Pull Request.", // prAutomationDescription
+WhenACardIsLinkedToPR = "Gdy karta jest połączona z Pull Request.", // whenACardIsLinkedToPR
+WhenPRTargetsTheBranch = "Gdy Pull Request celuje w gałąź.", // whenPRTargetsTheBranch
+AddBranchSpecificAutomation = "Dodaj automatyzację specyficzną dla gałęzi.", // addBranchSpecificAutomation
+AutomationMustHaveBranchName = "Automatyzacja musi mieć nazwę gałęzi.", // automationMustHaveBranchName
+AddBranchSpecificAutomationErrorAlreadyExists = "Błąd: automatyzacja specyficzna dla gałęzi już istnieje.", // addBranchSpecificAutomationErrorAlreadyExists
+InvalidGitBranchName = "Nazwa gałęzi Gita jest niewłaściwa.", // invalidGitBranchName
+BranchSpecificAutomationAdded = "Dodano automatyzację specyficzną dla gałęzi.", // branchSpecificAutomationAdded
+BranchSpecificAutomationUpdated = "Zaktualizowano automatyzację specyficzną dla gałęzi.", // branchSpecificAutomationUpdated
+BranchSpecificAutomationRemoved = "Usunięto automatyzację specyficzną dla gałęzi.", // branchSpecificAutomationRemoved
+DeleteAutomation = "Usuń automatyzację.", // deleteAutomation
+DeleteThisAutomation = "Usuń tę automatyzację.", // deleteThisAutomation
+DeleteAutomationConfirmation = "Potwierdź usunięcie automatyzacji.", // deleteAutomationConfirmation
+WhenPRChangesTo = "Gdy Pull Request zmienia się na.", // whenPRChangesTo
+MoveCardToList = "Przenieś kartę do listy.", // moveCardToList
+DoNotMove = "Nie przenoś.", // doNotMove
+DraftPROpened = "Otwarty draft Pull Request.", // draftPROpened
+PROpened = "Otwarty Pull Request.", // pROpened
+PRReviewRequest = "Prośba o recenzję Pull Request.", // pRReviewRequest
+PRMerged = "Pull Request złączony.", // pRMerged
+PRClosed = "Pull Request zamknięty.", // pRClosed
+NoListInBoard = "Brak list w tablicy.", // noListInBoard
+Unassigned = "Nieprzydzielony.", // unassigned
+ViewParentCard = "Wyświetl kartę rodzica.", // viewParentCard
+ChangeParentCard = "Zmień kartę rodzica.", // changeParentCard
+RemoveParentCard = "Usuń kartę rodzica.", // removeParentCard
+GoToParentCard = "Przejdź do karty rodzica.", // goToParentCard
+DiscardAndClose = "Porzuć i zamknij.", // discardAndClose
+ChangeStatus = "Zmień status.", // changeStatus
+CreateCardsInSelectedBoard = "Utwórz karty w wybranej tablicy.", // createCardsInSelectedBoard
+CreateCardIn = "Utwórz kartę w.", // createCardIn
+MaxFileSize = "Maksymalny rozmiar pliku.", // maxFileSize
+AddAttachment = "Dodaj załącznik.", // addAttachment
+CreateChecklist = "Utwórz checklistę.", // createChecklist
+AssignedToMe = "Przydzielone do mnie.", // assignedToMe
+MovedTAaNewList = "Przeniesiono do nowej listy.", // movedTAaNewList
+Moved = "Przeniesiono.", // moved
+Published = "Opublikowano.", // published
+CardComments = "Komentarze karty.", // cardComments
+PageComments = "Komentarze strony.", // pageComments
+MovedBetweenSpaces = "Przeniesiono między przestrzeniami.", // movedBetweenSpaces
+AddedToASpace = "Dodano do przestrzeni.", // addedToASpace
+Noduedate = "Brak daty wykonania.", // noduedate
+NowPlus2d = "Teraz +2 dni.", // now+2d
+NowPlus3d = "Teraz +3 dni.", // now+3d
+NowPlus1w = "Teraz +1 tydzień.", // now+1w
+NowPlus2w = "Teraz +2 tygodnie.", // now+2w
+NowPlus3w = "Teraz +3 tygodnie.", // now+3w
+NowPlus1M = "Teraz +1 miesiąc.", // now+1M
+NowPlus2M = "Teraz +2 miesiące.", // now+2M
+NowPlus3M = "Teraz +3 miesiące.", // now+3M
+NowPlus6M = "Teraz +6 miesięcy.", // now+6M
+NowPlus1y = "Teraz +1 rok.", // now+1y
+AnywhereYouAreMentioned = "Jesteś wspomniany w różnych miejscach.", // anywhereYouAreMentioned
+AnyCommentsOnResources = "Jakiekolwiek komentarze na zasobach.", // anyCommentsOnResources
+IfYouAreMemberOfABoard = "Jeśli jesteś członkiem tablicy.", // ifYouAreMemberOfABoard
+ManageMembers = "Zarządzaj członkami zespołu.", // manageMembers
+ManageWhoHasAccess = "Zarządzaj, kto ma dostęp do przestrzeni.", // manageWhoHasAccess
+Active = "Status jest aktywny.", // active
+Suspended = "Status jest zawieszony.", // suspended
+InviteMembers = "Zaproś nowych członków do przestrzeni.", // inviteMembers
+InviteToWorkspace = "Zaproś do przestrzeni roboczej.", // inviteToWorkspace
+EmailAddress = "Podaj adres e-mail.", // emailAddress
+InviteAs = "Zaproś jako.", // inviteAs
+TeamMembers = "Członkowie zespołu.", // teamMembers
+GitHubConnected = "GitHub jest połączony.", // gitHubConnected
+NothingToShow = "Nie ma nic do pokazania.", // nothingToShow
+FindTagsOrCreateNew = "Znajdź tagi lub utwórz nowe.", // findTagsOrCreateNew
+DeleteTag = "Usuń wybrany tag.", // deleteTag
+AddNewBoardOrPage = "Dodaj nową tablicę lub stronę.", // addNewBoardOrPage
+SpaceSettings = "Ustawienia przestrzeni roboczej.", // spaceSettings
+Rename = "Zmień nazwę.", // rename
+ChangeIcon = "Zmień ikonę.", // changeIcon
+AddToFavorites = "Dodaj do ulubionych.", // addToFavorites
+RemoveFromFavorites = "Usuń z ulubionych.", // removeFromFavorites
+Viewmoreassignees = "Wyświetl więcej przydzielonych osób.", // viewmoreassignees
+Noassignee = "Brak przydzielonych osób.", // noassignee
+Currentuser = "Bieżący użytkownik.", // currentuser
+APrivateSpace = "To jest prywatna przestrzeń.", // aPrivateSpace
+AreYouSureYouWantToRemove = "Czy na pewno chcesz usunąć ten element?", // areYouSureYouWantToRemove
+AreYouSureYouWantToLeave = "Czy na pewno chcesz opuścić tę przestrzeń?", // areYouSureYouWantToLeave
+YouAreTheOnlyPersonInThisPrivateSpace = "Jesteś jedyną osobą w tej prywatnej przestrzeni.", // youAreTheOnlyPersonInThisPrivateSpace
+WhenYouLeaveAPrivateSpace = "Gdy opuścisz prywatną przestrzeń.", // whenYouLeaveAPrivateSpace
+YouCanRejoinThePublicSpace = "Możesz ponownie dołączyć do publicznej przestrzeni.", // youCanRejoinThePublicSpace
+AreYouSureYouWantToRevoke = "Czy na pewno chcesz cofnąć zaproszenie?", // areYouSureYouWantToRevoke
+AreYouSureYouWantToTransferOwnership = "Czy na pewno chcesz przenieść własność?", // areYouSureYouWantToTransferOwnership
+TransferOwnership = "Przenieś własność do innego użytkownika.", // transferOwnership
+TransferSpaceOwnershipConfirmed = "Przeniesienie własności przestrzeni zostało potwierdzone.", // transferSpaceOwnershipConfirmed
+TransferSpaceOwnershipShort = "Krótkie przeniesienie własności przestrzeni.", // transferSpaceOwnershipShort
+TransferSpaceOwnershipDescription = "Opis przeniesienia własności przestrzeni.", // transferSpaceOwnershipDescription
+TransferSpaceOwnershipBeforeLeaving = "Przenieś własność przestrzeni przed odejściem.", // transferSpaceOwnershipBeforeLeaving
+Confirm = "Potwierdź operację.", // confirm
+Revoke = "Cofnij wcześniej udzielone uprawnienia.", // revoke
+NotFound = "Element nie został znaleziony.", // notFound
+ItemNotFound = "Nie znaleziono tego elementu.", // itemNotFound
+UrlDoesntLeadAnywhere = "Ten adres URL nie prowadzi do żadnego miejsca.", // urlDoesntLeadAnywhere
+ItemMightBeDeleted = "Ten element mógł zostać usunięty.", // itemMightBeDeleted
+DeleteItem = "Usuń ten element.", // deleteItem
+DeleteSpace = "Usuń tę przestrzeń roboczą.", // deleteSpace
+IfYouWantToDeleteSpace = "Jeśli chcesz usunąć tę przestrzeń, potwierdź.", // ifYouWantToDeleteSpace
+IfYouWantToDeleteResource = "Jeśli chcesz usunąć zasób, potwierdź operację.", // ifYouWantToDeleteResource
+TypeTheNameOfTheSpace = "Wpisz nazwę przestrzeni, którą chcesz usunąć.", // typeTheNameOfTheSpace
+RemoveMember = "Usuń wybranego członka zespołu.", // removeMember
+LeaveWorkspace = "Opuść tę przestrzeń roboczą.", // leaveWorkspace
+RevokeInvite = "Cofnij zaproszenie dla tego użytkownika.", // revokeInvite
+Invited = "Użytkownik został zaproszony.", // invited
+Pending = "Zaproszenie jest w trakcie realizacji.", // pending
+Admin = "Jest to administrator.", // admin
+Owner = "Jest to właściciel.", // owner
+Guest = "Jest to gość.", // guest
+InviteSent = "Zaproszenie zostało wysłane.", // inviteSent
+ResendInvite = "Wyślij zaproszenie ponownie.", // resendInvite
+WhatsNew = "Co nowego w tej przestrzeni?", // whatsNew
+ViewUpdates = "Zobacz najnowsze aktualizacje.", // viewUpdates
+WhenYouCreateTags = "Gdy tworzysz nowe tagi.", // whenYouCreateTags
+Merge = "Scal wybrane elementy.", // merge
+TheSpace = "Przestrzeń, w której się znajdujesz.", // theSpace
+HaveSameTags = "Elementy mają te same tagi.", // haveSameTags
+DoYouWantToMerge = "Czy chcesz scalcić wybrane elementy?", // doYouWantToMerge
+TagWithThisNameWorkspace = "Tag z tą nazwą w przestrzeni roboczej.", // tagWithThisNameWorkspace
+TagWithThisNameSpace = "Tag z tą nazwą w przestrzeni.", // tagWithThisNameSpace
+EditTag = "Edytuj wybrany tag.", // editTag
+WorkspaceTags = "Tagi przypisane do przestrzeni roboczej.", // workspaceTags
+ManageTags = "Zarządzaj tagami w przestrzeni roboczej.", // manageTags
+YouCantUndo = "Nie możesz cofnąć tej akcji.", // youCantUndo
+Merge2spaceTags = "Scal tagi w dwóch przestrzeniach.", // merge2spaceTags
+AreYouSureYouWantToDelete = "Czy na pewno chcesz usunąć ten element?", // areYouSureYouWantToDelete
+Uploaded = "Element został przesłany.", // uploaded
+CardCreatedInResource = "Karta została utworzona w zasobie.", // cardCreatedInResource
+GlobalLabelCreateIn = "Etykieta stworzona w globalnych ustawieniach.", // globalLabelCreateIn
+RememberBoard = "Zapamiętaj tę tablicę.", // rememberBoard
+CardTitle = "Tytuł karty.", // cardTitle
+PageTitle = "Tytuł strony.", // pageTitle
+CardDescription = "Opis karty.", // cardDescription
+EditAsignees = "Edytuj przydzielonych użytkowników.", // editAsignees
+ActionFailed = "Akcja nie powiodła się.", // actionFailed
+ThisBoardIsEmpty = "Ta tablica jest pusta.", // thisBoardIsEmpty
+ChangesAreSavedAuto = "Zmiany zostały zapisane automatycznie.", // changesAreSavedAuto
+UntitledCard = "Karta bez tytułu.", // untitledCard
+EditAssignees = "Edytuj przydzielonych.", // editAssignees
+ShowChildCards = "Pokaż karty podrzędne.", // showChildCards
+HideChildCards = "Ukryj karty podrzędne.", // hideChildCards
+CreateAndManageSpaces = "Twórz i zarządzaj przestrzeniami roboczymi.", // createAndManageSpaces
+ThereAreNoListInBoard = "Nie ma list w tej tablicy.", // thereAreNoListInBoard
+PageMovedToParent = "Strona została przeniesiona do rodzica.", // pageMovedToParent
+SubscribedToResourceUpdates = "Subskrybujesz aktualizacje zasobów.", // subscribedToResourceUpdates
+UnsubscribedFromResourceUpdates = "Wypisano z aktualizacji zasobów.", // unsubscribedFromResourceUpdates
+SubscribingToResourceUpdatesFailed = "Nie udało się subskrybować aktualizacji zasobów.", // subscribingToResourceUpdatesFailed
+UnsubscribingFromResourceUpdatesFailed = "Nie udało się wypisać z aktualizacji zasobów.", // unsubscribingFromResourceUpdatesFailed
+CouldntArchiveCard = "Nie udało się zarchiwizować karty.", // couldntArchiveCard
+CardRestored = "Karta została przywrócona.", // cardRestored
+DueOn = "Termin wykonania.", // dueOn
+Today = "Dzisiaj.", // today
+Yesterday = "Wczoraj.", // yesterday
+Attached = "Element został dołączony.", // attached
+Removed = "Element został usunięty.", // removed
+UpdatedTheStartDate = "Zaktualizowano datę rozpoczęcia.", // updatedTheStartDate
+SetTheStartDate = "Ustaw datę rozpoczęcia.", // setTheStartDate
+RemovedStartDate = "Data rozpoczęcia została usunięta.", // removedStartDate
+UpdatedTheDueDate = "Zaktualizowano datę wykonania.", // updatedTheDueDate
+SetTheDueDate = "Ustaw datę wykonania.", // setTheDueDate
+RemovedDueDate = "Data wykonania została usunięta.", // removedDueDate
+ChangedStausFrom = "Zmieniono status z.", // changedStausFrom
+EditStatus = "Edytuj status.", // editStatus
+EditName = "Edytuj nazwę.", // editName
+NumberOfCards = "Liczba kart.", // numberOfCards
+CreatedCard = "Karta została utworzona.", // createdCard
+People = "Ludzie.", // people
+AssignedMember = "Członek przypisany do zadania.", // assignedMember
+ArchivedTheCard = "Karta została zarchiwizowana." // archivedTheCard
+RestoredTheCard = "przywróconoKartę", // restoredTheCard
+TheCardDescription = "opisKarty", // theCardDescription
+TheCardTitle = "tytułKarty", // theCardTitle
+QuickPageTitleAttachImageFrom = "szybkiTytułStronyDodajObrazZ", // quickPage.title.attachImageFrom
+QuickPageTitleAttachCoverImageFrom = "szybkiTytułStronyDodajObrazOkładkiZ", // quickPage.title.attachCoverImageFrom
+ChooseWorkspaceZapier = "wybierzPrzestrzeńRobocząZapier", // chooseWorkspaceZapier
+ConnectSTZapeir = "połączSTZapeir", // connectSTZapeir
+ZapierIntegradionDescripiton = "opisIntegracjiZapier", // zapierIntegradionDescripiton
+ConnectToZapier = "połączZZapier", // connectToZapier
+Zapier = "zapier", // zapier
+OpenZapier = "otwórzZapier", // openZapier
+Allow = "zezwól", // allow
+ZappierWillHave = "ZapierBędzieMiał", // zappierWillHave
+YouMayBeSharing = "możeszDzielić", // youMayBeSharing
+StSettings = "ustawieniaST", // stSettings
+SeeZapiers = "zobaczZapier", // seeZapiers
+PrivacyPolicy = "politykaPrywatności", // privacyPolicy
+TermsOfService = "warunkiUsługi", // termsOfService
+MakeSureYouTrustZapier = "upewnijSięŻeUfaszZapier", // makeSureYouTrustZapier
+ConnectZapierToSuperthread = "połączZapierZSuperthread", // connectZapierToSuperthread
+ZapierIsRequesting = "ZapierŻąda", // zapierIsRequesting
+PreviewStInSlack = "podglądSTwSlacku", // previewStInSlack
+LookingForSlackNotifications = "szukaszPowiadomieńSlack", // lookingForSlackNotifications
+TurnThemOnInYour = "włączJeWTwoich", // turnThemOnInYour
+NotificationsSettings = "ustawieniaPowiadomień", // notificationsSettings
+ConnectToSlack = "połączZSlack", // connectToSlack
+OrLc = "lub", // or
+UseBoardsToVisualise = "użyjTablicAbyZwizualizować", // useBoardsToVisualise
+CollaborativeDocuments = "dokumentyWspółpracy", // collaborativeDocuments
+FilterAcrossTheEntire = "filtrujWCałej", // filterAcrossTheEntire
+UseFiltersToCreate = "użyjFiltrówAbyUtworzyć", // useFiltersToCreate
+KanbanBoardsUc = "TabliceKanban", // kanbanBoardsUc
+ImportYourExistingTasksFrom = "zaimportujSwojeIstniejąceZadaniaZ", // importYourExistingTasksFrom
+ImportTasks = "zaimportujZadania", // importTasks
+LeaveSpace = "opuśćPrzestrzeń", // leaveSpace
+ViewSpace = "zobaczPrzestrzeń", // viewSpace
+Deleted = "usunięty", // deleted
+LeaveNamedSpace = "opuśćPrzestrzeńNazwa", // leaveNamedSpace
+LeaveNamedPrivateSpace = "opuśćPrywatnąPrzestrzeńNazwa", // leaveNamedPrivateSpace
+DeleteAndLeaveNamedPrivateSpace = "usuńIOpuśćPrywatnąPrzestrzeńNazwa", // deleteAndLeaveNamedPrivateSpace
+YouLeftNamedSpace = "opuściłeśPrzestrzeńNazwa", // youLeftNamedSpace
+YouCannotLeaveTheSpace = "nieMożeszOpuścićPrzestrzeni", // youCannotLeaveTheSpace
+JoinSpace = "dołączDoPrzestrzeni", // joinSpace
+JoinThisSpace = "dołączDoTejPrzestrzeni", // joinThisSpace
+HasUnsupportedFileType = "maNieobsługiwanyTypPliku", // hasUnsupportedFileType
+MaxAllowedImageSize = "maksymalnyDopuszczalnyRozmiarObrazu", // maxAllowedImageSize
+MaxAllowedImageResolution = "maksymalnaDopuszczalnaRozdzielczośćObrazu", // maxAllowedImageResolution
+MovedFromSpace = "przeniesionoZPrzestrzeni", // movedFromSpace
+UntitledPage = "nienazwanaStrona", // untitledPage
+HideChildPages = "ukryjPodstrony", // hideChildPages
+ShowSubpages = "pokażPodstrony", // showSubpages
+AddedTo = "dodanoDo", // addedTo
+AddMembers = "dodajCzłonków", // addMembers
+RemovedFrom = "usuniętoZ", // removedFrom
+ViewMembers = "zobaczCzłonków", // viewMembers
+EnableScrollFocus = "włączFokusPrzewijania", // enableScrollFocus
+CopyLinkToHeading = "skopiujLinkDoNagłówka", // copyLinkToHeading
+Joined = "dołączył", // joined
+AddOwner = "dodajWłaściciela", // addOwner
+NoOwner = "brakWłaściciela", // noOwner
+SetOwner = "ustawWłaściciela", // setOwner
+Font = "czcionka", // font
+AddNewFolder = "dodajNowyFolder", // addNewFolder
+DeletedSuccesfully = "usuniętoPomyślnie", // deletedSuccesfully
+AddedSuccesfully = "dodanoPomyślnie", // addedSuccesfully
+ClickToUpdate = "kliknijAbyZaktualizować", // clickToUpdate
+NewVersionAvailable = "nowaWersjaDostępna", // NewVersionAvailable
+AddedChildCard = "dodanoKartęDzieci", // addedChildCard
+RemovedChildCard = "usuniętoKartęDzieci", // removedChildCard
+RemovedChecklist = "usuniętoListęKontrolną", // removedChecklist
+AddedChecklist = "dodanoListęKontrolną", // addedChecklist
+AddedChecklists = "dodanoListyKontrolne", // addedChecklists
+MarkedAsIncomplete = "oznaczonoJakoNiedokończone", // markedAsIncomplete
+CompletedChecklistItem = "ukończonoElementListyKontrolnej", // completedChecklistItem
+AddedParentCard = "dodanoKartęRodzica", // addedParentCard
+RemovedParentCard = "usuniętoKartęRodzica", // removedParentCard
+ChangedParentCardFrom = "zmienionoKartęRodzicaZ", // changedParentCardFrom
+DeleteFolder = "usuńFolder", // deleteFolder
+RenameFolder = "zmieńNazwęFolderu", // renameFolder
+LockSidebar = "zablokujPasekBoczni", // lockSidebar
+HideSidebar = "ukryjPasekBoczni", // hideSidebar
+Appearance = "wygląd", // appearance
+ChangeHowSuperthreadLooksAndFeels = "zmieńWyglądISposóbDziałaniaSuperthread", // changeHowSuperthreadLooksAndFeels
+MatchSistemSettings = "dopasujUstawieniaSystemu", // matchSistemSettings
+DarkMode = "trybCiemny", // darkMode
+LightMode = "trybJasny", // lightMode
+DarkGreyMode = "trybCiemnoszary", // darkGreyMode
+DarkBlueMode = "trybCiemnoniebieski", // darkBlueMode
+LightBlueMode = "trybJasnoniebieski", // lightBlueMode
+Year = "rok", // year
+Quarter = "kwartał", // quarter
+Month = "miesiąc", // month
+AddNewPageInside = "dodajNowąStronęWewnątrz", // addNewPageInside
+AddChildPage = "dodajPodstronę", // addChildPage
+Theme = "motyw", // theme
+BoardSettings = "ustawieniaTablicy", // boardSettings
+Reaction = "reakcja", // reaction
+Inbox = "Skrzynka odbiorcza", // inbox
+Resolve = "rozwiązać", // resolve
+Unresolved = "nierozwiązany", // unresolved
+Unresolve = "nie rozwiązać", // unresolve
+UnresolvedOnly = "tylkoNierozwiązane", // unresolvedOnly
+Resolved = "rozwiązany", // resolved
+UnresolveComment = "nieRozwiążKomentarza", // unresolveComment
+ResolveComment = "rozwiążKomentarz", // resolveComment
+CommentResolved = "KomentarzRozwiązany", // commentResolved
+CommentUnresolved = "KomentarzNierozwiązany", // commentUnresolved
+ResolvedOnly = "tylkoRozwiązane", // resolvedOnly
+AllComments = "wszystkieKomentarze", // allComments
+NoUnresolvedComments = "brakNierozwiązanychKomentarzy", // noUn
+NoResolvedComments = "brakRozwiązanychKomentarzy", // noResolvedComments
+NoComments = "brakKomentarzy", // noComments
+About = "o", // about
+MarkAsRead = "oznaczJakoPrzeczytane", // markAsRead
+MarkAsUnread = "oznaczJakoNieprzeczytane", // markAsUnread
+MarkAllAsResolved = "oznaczWszystkieJakoRozwiązane", // markAllAsResolved
+ShowUnresolved = "pokażNierozwiązane", // showUnresolved
+ShowResolved = "pokażRozwiązane", // showResolved
+NoNotifications = "brakPowiadomień", // noNotifications
+NoNewNotifications = "brakNowychPowiadomień", // noNewNotifications
+NoUnresolvedNotifications = "brakNierozwiązanychPowiadomień", // noUnresolvedNotifications
+YouCanShow = "możeszPokazać", // youCanShow
+NotificationsInstead = "powiadomieniaZamiast", // notificationsInstead
+SubscribeToGetNotifications = "subskrybujAbyOtrzymaćPowiadomienia", // subscribeToGetNotifications
+SelectANotificationToViewIt = "wybierzPowiadomienieAbyJeZobaczyć", // selectANotificationToViewIt
+YouCanMarkANotificationAs = "możeszOznaczyćPowiadomienieJako", // youCanMarkANotificationAs
+UnreadOr = "nieprzeczytaneLub", // unreadOr
+ResolveIt = "rozwiążTo", // resolveIt
+InboxNotificationsAreUnresolved = "powiadomieniaWInboxSąNierozwiązane", // inboxNotificationsAreUnresolved
+NotificationsAreNew = "powiadomieniaSąNowe", // notificationsAreNew
+WantNotificationsIn = "chceszPowiadomieniaW", // wantNotificationsIn
+SlaskQuestionMarkVisit = "slaskPytajnikOdwiedź", // slaskQuestionMarkVisit
+NoCardsMatchChosenFilter = "brakKartPasującychDoWybranegoFiltru", // noCardsMatchChosenFilter
+NoCardsFound = "nieZnalezionoKart", // noCardsFound
+BoardMoved = "tablicaPrzeniesiona", // boardMoved
+PageMoved = "stronaPrzeniesiona", // pageMoved
+OpenPage = "otwórzStronę", // openPage
+HasBeenDeleted = "zostałoUsunięte", // hasBeenDeleted
+DeletedResourcePlain = "usuniętyZasóbZwykły", // deletedResourcePlain
+DeletedResourceWithName = "usuniętyZasóbZNazwą", // deletedResourceWithName
+This = "to", // this
+AndTheEntire = "iCała", // andTheEntire
+ReactionsToYourComments = "reakcjeNaTwojeKomentarze", // reactionsToYourComments
+YouWereRemoved = "zostałeśUsunięty", // youWereRemoved
+FromPrivateSpace = "zPrywatnejPrzestrzeni", // fromPrivateSpace
+PrivateSpaceDesc = "opisPrywatnejPrzestrzeni", // privateSpaceDesc
+PrivateSpace = "PrywatnaPrzestrzeń", // privateSpace
+Everything = "wszystko", // everything
+TaskIsOverdue = "zadanieJestPoTermin", // taskIsOverdue
+EndDateIsBeforeStartDate = "dataKońcowaJestPrzedDatąRozpoczęcia", // endDateIsBeforeStartDate
+MoveCardIntoBoard = "przenieśKartęDoTablicy", // moveCardIntoBoard
+InList = "wLiście", // inList
+SearchForParentCard = "szukajKartyRodzica", // searchForParentCard
+Icons = "ikony", // icons
+Emojis = "emotikony", // emojis
+Custom = "niestandardowy", // custom
+MoveToBoard = "przenieśDoTablicy", // moveToBoard
+Previous = "poprzedni", // previous
+ManualOrder = "ręczneZamówienie", // manualOrder
+SortedBy = "posortowaneWedług", // sortedBy
+ToCancelDrag = "abyAnulowaćPrzeciąganie", // toCancelDrag
+GroupBy = "grupujWedług", // groupBy
+SubpageCreated = "podstronaUtworzona", // subpageCreated
+TableOfContents = "spisTreści", // tableOfContents
+EditWorkspaceTagsInSettings = "edytujTagiPrzestrzeniRoboczejWUstawieniach", // editWorkspaceTagsInSettings
+SideDocked = "przyczepionyZBoku", // sideDocked
+ModalOverlay = "nakładkaModalna", // modalOverlay
+CardLayout = "układKarty", // cardLayout
+SwitchLayout = "przełączUkład", // switchLayout
+ShowSidebar = "pokażPasekBoczny", // showSidebar
+Notags = "brakTagów", // notags
+ResetLayoutToBoardDefault = "zresetujUkładDoDomyślnejTablicy", // resetLayoutToBoardDefault
+AlreadyOpen = "jużOtwarte", // alreadyOpen
+DefaultBoardLayout = "domyślnyUkładTablicy", // defaultBoardLayout
+DefaultBoardLayoutDescription = "opisDomyślnegoUkładuTablicy", // defaultBoardLayoutDescription
+BoardDescription = "opisTablicy", // boardDescription
+ListDescription = "opisListy", // listDescription
+TimelineDescription = "opisOsiCzasu", // timelineDescription
+CalendarDescription = "opisKalendarza", // calendarDescription
+BoardName = "nazwaTablicy", // boardName
+MemberRemoved = "członekUsunięty", // memberRemoved
+ResetLayoutToViewDefault = "zresetujUkładDoDomyślnegoWidoku", // resetLayoutToViewDefault
+EarliestDueDate = "najwcześniejszaDataWykonania", // earliestDueDate
+HighestPriority = "najwyższyPriorytet", // highestPriority
+LargestEstimate = "największeOsobisteOceny", // largestEstimate
+STIsMostUseful = "STJestNajbardziejPrzydatne", // STIsMostUseful
+ReadOnly = "tylkoDoOdczytu", // readOnly
+BoardWillNotShowOnPublicPage = "tablicaNieBędzieWidocznaNaStroniePublicznej", // boardWillNotShowOnPublicPage
+RemoveBoard = "usuńTablicę", // removeBoard
+NoSprints = "brakSprintów", // noSprints
+NoNonSprintBoardsInThisSpace = "brakTablicNieSprintowychWTejPrzestrzeni", // noNonSprintBoardsInThisSpace
+InviteToWorkspaceDescription = "opisZaproszeniaDoPrzestrzeniRoboczej", // inviteToWorkspaceDescription
+AlreadyMembersOfWorkspace = "jużCzłonkowiePrzestrzeniRoboczej", // alreadyMembersOfWorkspace
+Information = "informacje", // information
+Success = "sukces", // success
+Error = "błąd", // error
+Warning = "ostrzeżenie", // warning
+TypeSomething = "wpiszCoś", // typeSomething
+Invite = "zaprosić", // invite
+Latest = "najnowsze", // latest
+CardChildrenTitle = "tytułDzieciKarty", // cardChildrenTitle
+ChildCards = "kartyDzieci", // childCards
+Members = "członkowie", // members
+RemoveFromCard = "usuńZKarty", // removeFromCard
+DisplayName = "nazwaWyświetlana", // displayName
+FirstName = "imię", // firstName
+LastName = "nazwisko", // lastName
+Update = "aktualizacja", // update
+OpenSuperthread = "otwórzSuperthread", // openSuperthread
+InfoNotification = "powiadomienieInformacyjne", // infoNotification
+ErrorNotification = "powiadomienieOstrzegawcze", // errorNotification
+AlertNotification = "powiadomienieAlarmowe", // alertNotification
+SuccessNotification = "powiadomienieSukcesu", // successNotification
+SignInIntoExistingWorkspace = "ZalogujSięDoIstniejącejPrzestrzeniRoboczej", // SignInIntoExistingWorkspace
+Preferences = "preferencje", // preferences
+Pages = "strony", // pages
+GridView = "widokSiatki", // gridView
+ListView = "widokListy", // listView
+LastCreated = "ostatnioUtworzono", // lastCreated
+LastUpdated = "ostatnioZaktualizowano", // lastUpdated
+SearchMembers = "szukajCzłonków", // searchMembers
+Or = "lub", // or
+AddCollaborators = "dodajWspółpracowników", // add_collaborators
+SelectWorkspace = "wybierzPrzestrzeńRoboczą", // selectWorkspace
+SelectWorkspaceIntegrations = "wybierzIntegracjePrzestrzeniRoboczej", // selectWorkspaceIntegrations
+Change = "zmień", // change
+CreateNewWorkspace = "utwórzNowąPrzestrzeńRoboczą", // createNewWorkspace
+NotSeeingYourWorkspace = "nieWidzęTwojejPrzestrzeniRoboczej", // notSeeingYourWorkspace
+Dismiss = "odrzuć", // dismiss
+Load = "załaduj", // load
+YouAlreadyHave = "jużMasz", // youAlreadyHave
+OpenBoard = "otwórzTablicę", // openBoard
+CardCannotBeMovedDirectlyToSpace = "kartaNieMożeByćPrzeniesionaBezpośrednioDoPrzestrzeni", // cardCannotBeMovedDirectlyToSpace
+ClickToRename = "kliknijAbyZmieńNazwę", // clickToRename
+Info = "informacje", // info
+ClearAllFilters = "wyczyśćWszystkieFiltry", // clearAllFilters
+Is = "jest", // is
+IsNot = "nieJest", // is_not
+Includes = "zawiera", // includes
+Excludes = "wyklucza", // excludes
+Fullscreen = "pełnyEkran", // fullscreen
+CommentsActivity = "aktywnośćKomentarzy", // commentsActivity
+Show = "pokaż", // show
+NewestFirst = "najnowszePierwsze", // newestFirst
+OldestFirst = "najstarszePierwsze", // oldestFirst
+PageCreated = "stronaUtworzona", // pageCreated
+QuickPageLabelSetAsDefaultSpace = "szybkiEtykietaStronyUstawJakoDomyślnąPrzestrzeń", // quickPage.label.setAsDefaultSpace
+CreateNewList = "utwórzNowąListę", // createNewList
+EnterListName = "wprowadźNazwęListy", // enterListName
+ListStatus = "statusListy", // listStatus
+Print = "drukuj", // print
+ReactedWith = "zareagowałZ", // reactedWith
+You = "ty", // you
+CannotModidyListStatus = "nieMożnaZmieńStatusListy", // cannotModidyListStatus
+OnlineAgain = "ponownieOnline", // onlineAgain
+YouAreOffline = "jesteśOffline", // youAreOffline
+Exploring = "eksplorowanie", // exploring
+Deactivated = "dezaktywowany", // deactivated
+DeleteView = "usuńWidok", // deleteView
+SaveAsNewView = "zapiszJakoNowyWidok", // saveAsNewView
+NoResults = "brakWyników", // noResults
+thisFilterDoesNotMatch = "tenFiltrNiePasuje", // thisFilterDoesNotMatch
+rememberChoice = "zapamiętajWybór", // rememberChoice
+electronOpenInApp = "otwórzWApp", // electronOpenInApp
+electronOpenInDesktopApp = "otwórzWDesktopApp", // electronOpenInDesktopApp
+electronOpenLinksInDesktopApp = "otwórzLinkiWDesktopApp", // electronOpenLinksInDesktopApp
+electronAutoOpenLinksInDesktopApp = "automatycznieOtwórzLinkiWDesktopApp", // electronAutoOpenLinksInDesktopApp
+electronCurrentLinkOpenedInApp = "aktualnyLinkOtwarteWApp", // electronCurrentLinkOpenedInApp
+electronAppIsInstalled = "aplikacjaJestZainstalowana", // electronAppIsInstalled
+electronUserMentioned = "użytkownikWzmiankowany", // electronUserMentioned
+electronResourceMoved = "zasóbPrzeniesiony", // electronResourceMoved
+electronMemberAdded = "członekDodany", // electronMemberAdded
+electronMemberRemoved = "członekUsunięty", // electronMemberRemoved
+electronCommentAdded = "komentarzDodany", // electronCommentAdded
+electronResourceArchived = "zasóbZarchiwizowany", // electronResourceArchived
+electronUserReacted = "użytkownikZareagował", // electronUserReacted
+results = "wyniki", // results
+tasks = "zadania", // tasks
+updateAppToEditPage = "zaktualizujAplikacjęAbyEdytowaćStronę", // updateAppToEditPage
+electronRecentlyViewed = "ostatnioOdwiedzaneWElectron", // electronRecentlyViewed
+electronOpenDesktopApp = "otwórzDesktopApp", // electronOpenDesktopApp
+electronRedirectingToApp = "przekierowujeDoAplikacji", // electronRedirectingToApp
+updateAppToEditComment = "zaktualizujAplikacjęAbyEdytowaćKomentarz", // updateAppToEditComment
+updateAppToEditCard = "zaktualizujAplikacjęAbyEdytowaćKartę", // updateAppToEditCard
+connectToImporter = "połączZImporterem", // connectToImporter
+accessToken = "tokenDostępu", // accessToken
+installationCloudHostname = "nazwaHostaInstalacjiChmury", // installationCloudHostname
+findInYour = "znajdźWTwoim", // findInYour
+emailAddressYouUseFor = "adresEmailKtóregoUżywaszDo", // emailAddressYouUseFor
+selectWhich = "wybierzKtóre", // selectWhich
+selectBoardsToImport = "wybierzTabliceDoImportu", // selectBoardsToImport
+importYourExistingNameToST = "importujTwojąIstniejącąNazwaDoST", // importYourExistingNameToST
+jiraBoardMapingSubtitle = "podtytułMapowaniaTablicJira", // jiraBoardMapingSubtitle
+trelloBoardMapingSubtitle = "podtytułMapowaniaTablicTrello", // trelloBoardMapingSubtitle
+shortcutBoardMapingSubtitle = "podtytułMapowaniaTablicSkrótów", // shortcutBoardMapingSubtitle
+jiraQuickImportText = "tekstSzybkiegoImportuJira", // jiraQuickImportText
+trelloQuickImportText = "tekstSzybkiegoImportuTrello", // trelloQuickImportText
+shortcutQuickImportText = "tekstSzybkiegoImportuSkrótu", // shortcutQuickImportText
+jiraCustomImportText = "tekstNiestandardowegoImportuJira", // jiraCustomImportText
+trelloCustomImportText = "tekstNiestandardowegoImportuTrello", // trelloCustomImportText
+shortcutCustomImportText = "tekstNiestandardowegoImportuSkrótu", // shortcutCustomImportText
+superthreadSpace = "przestrzeńSuperthread", // superthreadSpace
+mapImporterUsersToSTUSers = "mapujUżytkownikówImporteraDoUżytkownikówST", // mapImporterUsersToSTUSers
+startImport = "rozpocznijImport", // startImport
+wellLetYouKnowWhenImportFinishes = "poinformujemyCięGdyImportSkończy", // wellLetYouKnowWhenImportFinishes
+feelFreeToContuinueUsingST = "śmiałoKontynuujKorzystanieZST", // feelFreeToContuinueUsingST
+dontImportThisUser = "nieImportujTegoUżytkownika", // dontImportThisUser
+matchToAnExistingSTUser = "dopasujDoIstniejącegoUżytkownikaST", // matchToAnExistingSTUser
+createANewUser = "utwórzNowegoUżytkownika", // createANewUser
+projectsCannotBeMovedToSpaces = "projektyNieMogąByćPrzenoszoneDoPrzestrzeni", // projectsCannotBeMovedToSpaces
+importOpenStories = "importujOtwarteHistorie", // importOpenStories
+importOpenStoriesDesc = "opisImportuOtwarteHistorie", // importOpenStoriesDesc
+importStaleStories = "importujZastałeHistorie", // importStaleStories
+importStaleStoriesDesc = "opisImportuZastałeHistorie", // importStaleStoriesDesc
+wedLikeToTake = "chcielibyśmyWziąć", // wedLikeToTake
+thirtySeconds = "trzydzieściSekund", // thirtySeconds
+toShowYouAround = "abyPokazaćCiWokół", // toShowYouAround
+getStarted = "zaczynamy", // getStarted
+youCanAlways = "zawszeMożesz", // youCanAlways
+youreGoodToGo = "jesteśGotowyDoWyjścia", // youreGoodToGo
+quickStart = "szybkiStart", // quickStart
+getToKnow = "poznaj", // getToKnow
+desktopApp = "aplikacjaDesktop", // desktopApp
+thisLinkWasOpenedInApp = "tenLinkZostałOtwarteWApp", // thisLinkWasOpenedInApp
+openHereInstead = "otwórzTutajZamiast", // openHereInstead
+browseAndManageSpaces = "przeglądajIManagePrzestrzenie", // browseAndManageSpaces
+manageSpaces = "zarządzajPrzestrzeniami", // manageSpaces
+searchSpaces = "wyszukajPrzestrzenie", // searchSpaces
+createSpace = "utwórzPrzestrzeń", // createSpace
+addADescription = "dodajOpis", // addADescription
+showingNumberOfSpaces = "pokazujeLiczbęPrzestrzeni", // showingNumberOfSpaces
+noResultsFoundFor = "brakWynikówDla", // noResultsFoundFor
+changeDescription = "zmieńOpis", // changeDescription
+contents = "zawartość", // contents
+createSpaceSubtitle = "podtytułUtworzeniaPrzestrzeni", // createSpaceSubtitle
+spaceNameAndIcon = "nazwaPrzestrzeniIIkonka", // spaceNameAndIcon
+somethingShortAndClear = "cośKrótkiegoINiezrozumiałego", // somethingShortAndClear
+youCanChangeThisLater = "możeszZmienicToPóźniej", // youCanChangeThisLater
+descritionOptional = "opisOpcjonalny", // descritionOptional
+whatIsThisSpaceFor = "doCzegoJestTaPrzestrzeń", // whatIsThisSpaceFor
+addPeopleToSpaceOptional = "dodajOsobyDoPrzestrzeniOpcjonalne", // addPeopleToSpaceOptional
+addPeople = "dodajLudzi", // addPeople
+addPeopleSubtitle = "podtytułDodawaniaLudzi", // addPeopleSubtitle
+openSpace = "otwórzPrzestrzeń", // openSpace
+openSpaceSubtitle = "podtytułOtwarciaPrzestrzeni", // openSpaceSubtitle
+privateSpaceSubtitle = "podtytułPrywatnejPrzestrzeni", // privateSpaceSubtitle
+inviteNewPeople = "zaprosićNowychLudzi", // inviteNewPeople
+inviteeEmailAddress = "adresEmailZaproszonego", // inviteeEmailAddress
+inviteSectionSubtitle = "podtytułSekcjiZaproszenia", // inviteSectionSubtitle
+couldntCreateSpace = "nieUdałoSięUtworzyćPrzestrzeni", // couldntCreateSpace
+spaceCreated = "przestrzeńUtworzona", // spaceCreated
+emailAlreadyAdded = "adresEmailJużDodany", // emailAlreadyAdded
+addingSomeMembersFailed = "dodawanieNiektórychCzłonkówNiePowiodłoSię", // addingSomeMembersFailed
+founder = "założyciel", // founder
+director = "dyrektor", // director
+teamLead = "liderZespołu", // teamLead
+individualContributor = "indywidualnyWkład", // individualContributor
+softwareEngineering = "inżynieriaOprogramowania", // softwareEngineering
+design = "projektowanie", // design
+productManagement = "zarządzanieProduktami", // productManagement
+marketing = "marketing", // marketing
+finance = "finanse", // finance
+development = "rozwój", // development
+marketer = "marketer", // marketer
+sales = "sprzedaż", // sales
+clickToView = "kliknijAbyZobaczyć", // clickToView
+clickToDownload = "kliknijAbyPobrać", // clickToDownload
+business = "biznes", // business
+pickAllThatApply = "wybierzWszystkieKtórePasują", // pickAllThatApply
+pickOne = "wybierzJedną", // pickOne
+customerSupport = "wsparcieKlienta", // customerSupport
+humanResources = "zasobyLudzkie", // humanResources
+socialMedia = "mediaSpołecznościowe", // socialMedia
+wordOfMouth = "pocztąPantoflową", // wordOfMouth
+searchEngine = "wyszukiwarka", // searchEngine
+advertising = "reklama", // advertising
+searchForSpaceOrBoard = "wyszukajPrzestrzeńLubTablicę", // searchForSpaceOrBoard
+starTypingToSearchFor = "zaczynajPisaćAbyWyszukać", // starTypingToSearchFor
+myWork = "mojaPraca", // myWork
+myWorkAssigned = "mojaPraca.przydzielona", // myWorkAssigned
+myWorkCreated = "mojaPraca.stworzona", // myWorkCreated
+myWorkNoResultsCreated = "mojaPracaBrakWyników.stworzona", // myWorkNoResultsCreated
+myWorkNoResultsAssigned = "mojaPracaBrakWyników.przydzielona", // myWorkNoResultsAssigned
+memberNoResultsAssigned = "członekBrakWyników.przydzielona", // memberNoResultsAssigned
+memberNoResultsCreated = "członekBrakWyników.stworzona", // memberNoResultsCreated
+newCard = "nowaKarta", // newCard
+addedCommentHiddenByFilter = "dodanyKomentarzUkrytyPrzezFiltr", // addedCommentHiddenByFilter
+createdCardHiddenByFilter = "stworzonaKartaUkrytaPrzezFiltr", // createdCardHiddenByFilter
+viewWork = "zobaczPracę", // viewWork
+removeFromSpace = "usuńZPrzestrzeni", // removeFromSpace
+assignedInThisBoard = "przydzielonyWTejTablicy", // assignedInThisBoard
+layout = "układ", // layout
+createdCardMovedSortOrder = "stworzonaKartaPrzeniesionaSortowanie", // createdCardMovedSortOrder
+createCardGroupBy = "stwórzKartęGrupując", // createCardGroupBy
+canNotMoveCardInsameBoard = "nieMożnaPrzenieśćKartyWtejSamejTablicy", // canNotMoveCardInsameBoard
+latestReply = "najnowszaOdpowiedź", // latestReply
+replyLabel = "etykietaOdpowiedzi", // replyLabel
+totalReplies = "wszystkieOdpowiedzi", // totalReplies
+olderReplies = "starszeOdpowiedzi", // olderReplies
+leaveReply = "zostawOdpowiedź", // leaveReply
+hideReplies = "ukryjOdpowiedzi", // hideReplies
+showReplies = "pokażOdpowiedzi", // showReplies
+oneReply = "jednaOdpowiedź", // oneReply
+discardComment = "odrzućKomentarz", // discardComment
+areYouSureYouWantToDiscard = "czyNaPełnoChceszOdrzucić", // areYouSureYouWantToDiscard
+skipToEnd = "przejdźDoKońca", // skipToEnd
+priority = "priorytet", // priority
+noPriority = "brakPriorytetu", // noPriority
+urgent = "pilne", // urgent
+high = "wysoki", // high
+medium = "średni", // medium
+low = "niski", // low
+priorities = "priorytety", // priorities
+changedThePriorityFrom = "zmienionoPriorytetZ", // changedThePriorityFrom
+changedTheEstimateFrom = "zmienionoSzacowanieZ", // changedTheEstimateFrom
+setThePriorityTo = "ustawPriorytetNa", // setThePriorityTo
+setTheEstimateTo = "ustawSzacowanieNa", // setTheEstimateTo
+removedTheEstimate = "usuniętoSzacowanie", // removedTheEstimate
+thereAreNoPages = "brakStron", // thereAreNoPages
+thereAreNoBoards = "brakTablic", // thereAreNoBoards
+commentsOnly = "tylkoKomentarze", // commentsOnly
+activityOnly = "tylkoAktywność", // activityOnly
+seeCardsWithThisTag = "zobaczKartyZtymTagiem", // seeCardsWithThisTag
+noResultsForThatName = "brakWynikówDlaTegoImienia", // noResultsForThatName
+youCan = "możesz", // youCan
+createASpace = "stwórzPrzestrzeń", // createASpace
+named = "nazwana", // named
+estimate = "szacowanie", // estimate
+onePoint = "jedenPunkt", // onePoint
+numberOfPoints = "liczbaPunktów", // numberOfPoints
+extraSmall = "extraMały", // extraSmall
+small = "mały", // small
+mediumSize = "średniRozmiar", // mediumSize
+large = "duży", // large
+extraLarge = "extraDuży", // extraLarge
+noEstimate = "brakSzacowania", // noEstimate
+settingsProjectsPreferencesSubtitle = "ustawieniaPreferencjeProjektów", // settingsProjectsPreferencesSubtitle
+howCardsAreEstimated = "jakSąSzacowaneKarty", // howCardsAreEstimated
+disableCardEstimationForThisSpace = "wyłączSzacowanieKartDlaTejPrzestrzeni", // disableCardEstimationForThisSpace
+fibonacciPoints = "punktyFibonacciego", // fibonacciPoints
+exponentialPoints = "punktyEkspresowe", // exponentialPoints
+tshirtSizes = "rozmiaryKoszulek", // tshirtSizes
+setEstimate = "ustawSzacowanie", // setEstimate
+emailNotificationHelperText = "pomocniczyTekstPowiadomieniaEmail", // emailNotificationHelperText
+estimated = "oszacowane", // estimated
+cardSpaceEstimationTurnedOff = "szacowanieKartWPrzestrzeniWyłączone", // cardSpaceEstimationTurnedOff
+totalEstimatePointsTooltipContent = "zawartośćWskazówkiSumaPunktówSzacowania", // totalEstimatePointsTooltipContent
+estimates = "szacunki", // estimates
+assignItTo = "przypiszTo", // assignItTo
+searchForACard = "wyszukajKartę", // searchForACard
+createACard = "stwórzKartę", // createACard
+archivedCardsAreHidden = "archiwalneKartySąUkryte", // archivedCardsAreHidden
+enterANameAbove = "wpiszNazwaPowyżej", // enterANameAbove
+chooseFiltersYouWouldLike = "wybierzFiltryKtóreChcesz", // chooseFiltersYouWouldLike
+cannotCreateViewOnMobile = "nieMożnaUtworzyćWidokuNaUrządzeniuMobilnym", // cannotCreateViewOnMobile
+viewCardInBoard = "zobaczKartęWTablicy", // viewCardInBoard
+guestsMustBeAddedToOneSpace = "gościeMusząByćDodaniDoJednejPrzestrzeni", // guestsMustBeAddedToOneSpace
+createCard = "stwórzKartę", // createCard
+suggestedBasedOnTitle = "sugerowaneNaPodstawieTytułu", // suggestedBasedOnTitle
+acceptSuggestion = "zaakceptujSugestię", // acceptSuggestion
+rejectSuggestion = "odrzućSugestię", // rejectSuggestion
+suggestionPlaceholderText = "tekstPlaceholderSugestii", // suggestionPlaceholderText
+changeEmail = "zmieńEmail", // changeEmail
+logOutAndContinue = "wylogujSięIOdbyć", // logOutAndContinue
+confirmAccountOwnership = "potwierdźWłasnośćKonta", // confirmAccountOwnership
+reauthenticateEmailDescription = "opisReautoryzacjiEmaila", // reauthenticateEmailDescription
+enterANewEmail = "wpiszNowyEmail", // enterANewEmail
+resendLoginCode = "wyślijPonownieKodLogowania", // resendLoginCode
+emailAddressTakenByAnotherUser = "adresEmailZajętyPrzezInnegoUżytkownika", // emailAddressTakenByAnotherUser
+assistant = "asystent", // assistant
+changeTone = "zmieńTon", // changeTone
+simplify = "uproszczenie", // simplify
+summarize = "podsumować", // summarize
+translate = "przetłumaczyć", // translate
+generate = "generować", // generate
+replaceText = "zastąpTekst", // replaceText
+insertBelow = "wstawPoniżej", // insertBelow
+assistanceWith = "pomocZ", // assistanceWith
+copiedToClipboard = "skopiowanoDoSchowka", // copiedToClipboard
+academic = "akademicki", // academic
+casual = "swobodny", // casual
+confident = "pewny", // confident
+friendly = "przyjazny", // friendly
+neutral = "neutralny", // neutral
+professional = "profesjonalny", // professional
+aiFeatures = "funkcjeAi", // aiFeatures
+emailDigestSentAt = "digestEmailWysłanyO", // emailDigestSentAt
+inYourTimezone = "wTwojejStrefieCzasowej", // inYourTimezone
+enableNotificationsFirst = "najpierwWłączPowiadomienia", // enableNotificationsFirst
+turnOnAIAssitantInFormatingToolbar = "włączAsystentaAiWPaneluFormatowania", // turnOnAIAssitantInFormatingToolbar
+superthreadSendingDataTo = "superthreadWysyłaDaneDo", // superthreadSendingDataTo
+experimentalFeatureMayChangeFunctionality = "funkcjaEksperymentalnaMożeZmienićFunkcjonalność", // experimentalFeatureMayChangeFunctionality
+contactUsToEnable = "skontaktujSięZnamByWłączyć", // contactUsToEnable
+boardOpenedInTheBackground = "tablicaOtwartaWtle", // boardOpenedInTheBackground
+resetFilters = "zresetujFiltry", // resetFilters
+createSpaceTitle = "stwórzPrzestrzeń.tytuł", // createSpaceTitle
+createSpaceTooltip = "stwórzPrzestrzeń.tooltip", // createSpaceTooltip
+createPrivateSpaceTitle = "stwórzPrywatnąPrzestrzeń.tytuł", // createPrivateSpaceTitle
+createPrivateSpaceTooltip = "stwórzPrywatnąPrzestrzeń.tooltip", // createPrivateSpaceTooltip
+inviteUserTitle = "zaproszenieUżytkownika.tytuł", // inviteUserTitle
+inviteUserTooltip = "zaproszenieUżytkownika.tooltip", // inviteUserTooltip
+mentionAnythingTitle = "wspomnijCokolwiek.tytuł", // mentionAnythingTitle
+mentionAnythingTooltip = "wspomnijCokolwiek.tooltip", // mentionAnythingTooltip
+addChildCardTitle = "dodajKartęPodrzędną.tytuł", // addChildCardTitle
+addChildCardTooltip = "dodajKartęPodrzędną.tooltip", // addChildCardTooltip
+visitInboxTitle = "odwiedźSkrzynkę.tytuł", // visitInboxTitle
+visitInboxTooltip = "odwiedźSkrzynkę.tooltip", // visitInboxTooltip
+movePageTitle = "przenieśStronę.tytuł", // movePageTitle
+movePageTooltip = "przenieśStronę.tooltip", // movePageTooltip
+createSubpageTitle = "stwórzPodstronę.tytuł", // createSubpageTitle
+createSubpageTooltip = "stwórzPodstronę.tooltip", // createSubpageTooltip
+addPageIconTitle = "dodajIkonęStrony.tytuł", // addPageIconTitle
+addPageIconTooltip = "dodajIkonęStrony.tooltip", // addPageIconTooltip
+addPageCoverTitle = "dodajOkładkęStrony.tytuł", // addPageCoverTitle
+addPageCoverTooltip = "dodajOkładkęStrony.tooltip", // addPageCoverTooltip
+quickCardShortcutTitle = "szybkiSkrótKarty.tytuł", // quickCardShortcutTitle
+quickCardShortcutTooltip = "szybkiSkrótKarty.tooltip", // quickCardShortcutTooltip
+quickPageShortcutTitle = "szybkiSkrótStrony.tytuł", // quickPageShortcutTitle
+quickPageShortcutTooltip = "szybkiSkrótStrony.tooltip", // quickPageShortcutTooltip
+createCardTitle = "stwórzKartę.tytuł", // createCardTitle
+createCardTooltip = "stwórzKartę.tooltip", // createCardTooltip
+commentOnCardTitle = "komentarzDoKarty.tytuł", // commentOnCardTitle
+commentOnCardTooltip = "komentarzDoKarty.tooltip", // commentOnCardTooltip
+searchShortcutTitle = "wyszukajSkrót.tytuł", // searchShortcutTitle
+searchShortcutTooltip = "wyszukajSkrót.tooltip", // searchShortcutTooltip
+createBoardTitle = "stwórzTablicę.tytuł", // createBoardTitle
+createBoardTooltip = "stwórzTablicę.tooltip", // createBoardTooltip
+uploadAvatarTitle = "prześlijAwatar.tytuł", // uploadAvatarTitle
+uploadAvatarTooltip = "prześlijAwatar.tooltip", // uploadAvatarTooltip
+createPageTitle = "stwórzStronę.tytuł", // createPageTitle
+createPageTooltip = "stwórzStronę.tooltip", // createPageTooltip
+setYourNameTitle = "ustawSwojeImię.tytuł", // setYourNameTitle
+setYourNameTooltip = "ustawSwojeImię.tooltip", // setYourNameTooltip
+aCardMustHaveATitle = "kartaMusiMiećTytuł", // aCardMustHaveATitle
+showAll = "pokażWszystko", // showAll
+showLess = "pokażMniej", // showLess
+hideEmptyGroups = "ukryjPusteGrupy", // hideEmptyGroups
+showAnotherAssignee = "pokażInnegoPrzypisanego", // showAnotherAssignee
+showAnotherTags = "pokażInneTagi", // showAnotherTags
+spaceMembers = "członkowiePrzestrzeni", // spaceMembers
+addExistingMembers = "dodajIstniejącychCzłonków", // addExistingMembers
+inviteNewMembers = "zaprosićNowychCzłonków", // inviteNewMembers
+spaceDetails = "szczegółyPrzestrzeni", // spaceDetails
+makeBoardFullWidth = "zróbTablicęPełnejSzerokości", // makeBoardFullWidth
+askAiAssistantSearch = "zapytajAsystentaAiWyszukiwanie", // askAiAssistantSearch
+backToSearchResults = "powrótDoWynikówWyszukiwania", // backToSearchResults
+sources = "źródła", // sources
+askAiQuestionLong = "zapytajAiPytanieDługie", // askAiQuestionLong
+spaceSprintsSettings = "ustawieniaSprintówPrzestrzeni", // spaceSprintsSettings
+turnOnSprintsForThisSpace = "włączSprintyDlaTejPrzestrzeni", // turnOnSprintsForThisSpace
+turnOnSprintsDesc = "włączOpisSprintów", // turnOnSprintsDesc
+ownersAdminsCanTurnOnSprints = "właścicieleAdministratorzyMogąWłączyćSprinty", // ownersAdminsCanTurnOnSprints
+onlyOwnerOfPrivateSpace = "tylkoWłaścicielPrywatnejPrzestrzeni", // onlyOwnerOfPrivateSpace
+onlySpaceOwnerCanModifyMembers = "tylkoWłaścicielPrzestrzeniMożeModyfikowaćCzłonków", // onlySpaceOwnerCanModifyMembers
+cannotModifySpaceOwner = "nieMożnaModyfikowaćWłaścicielaPrzestrzeni", // cannotModifySpaceOwner
+sprintLength = "długośćSprintu", // sprintLength
+weeks = "tygodnie", // weeks
+sprintStartOn = "sprintRozpoczynaSię", // sprintStartOn
+coolDownPeriod = "okresOdpoczynku", // coolDownPeriod
+coolDownPeriodDesc = "opisOkresuOdpoczynku", // coolDownPeriodDesc
+coolDownPeriodLength = "długośćOkresuOdpoczynku", // coolDownPeriodLength
+sprintBoardStatuses = "statusyTablicySprintu", // sprintBoardStatuses
+sprintBoardStatusesDesc = "opisStatusówTablicySprintu", // sprintBoardStatusesDesc
+addStatus = "dodajStatus", // addStatus
+dueInDays = "terminWdnia", // dueInDays
+sprints = "sprinty", // sprints
+addSprint = "dodajSprint", // addSprint
+sprint = "sprint", // sprint
+openSprint = "otwórzSprint", // openSprint
+renameSprint = "zmieńNazwęSprintu", // renameSprint
+markAsComplete = "oznaczJakoZakończony", // markAsComplete
+changeSprintDates = "zmieńDatySprintu", // changeSprintDates
+cancelSprint = "anulujSprint", // cancelSprint
+changeDates = "zmieńDaty", // changeDates
+chooseNewStartAndEndDates = "wybierzNoweDatyRozpoczęciaIZakończenia", // chooseNewStartAndEndDates
+renameSprintDescription = "opisZmienionejNazwySprintu", // renameSprintDescription
+startDateIsEarlierThanPreviousEndDate = "dataRozpoczęciaJestWcześniejszaNiżPoprzedniaDataZakończenia", // startDateIsEarlierThanPreviousEndDate
+enterSprintName = "wprowadźNazwęSprintu", // enterSprintName
+cancelSprintWarning = "ostrzeżenieAnulowaniaSprintu", // cancelSprintWarning
+dontCancel = "nieAnuluj", // dontCancel
+upgradePlan = "ulepszPlan", // upgradePlan
+upgradePrivateSpaceTitle = "ulepszTytułPrywatnejPrzestrzeni", // upgradePrivateSpaceTitle
+upgradePrivateSpaceDescription = "ulepszOpisPrywatnejPrzestrzeni", // upgradePrivateSpaceDescription
+upgradePlanBadgeTooltip = "tooltipOdznakiUlepszaniaPlanu", // upgradePlanBadgeTooltip
+upgradeUserRolesTitle = "ulepszTytułRólUżytkowników", // upgradeUserRolesTitle
+upgradeUserRolesDescription = "ulepszOpisRólUżytkowników", // upgradeUserRolesDescription
+sprintSettings = "ustawieniaSprintu", // sprintSettings
+electronDownloadApp = "elektronPobierzAplikację", // electronDownloadApp
+electronDownloadAppDescription = "elektronOpisPobieraniaAplikacji", // electronDownloadAppDescription
+macArm64Label = "macArm64Etykieta", // macArm64Label
+macx64Label = "macx64Etykieta", // macx64Label
+mailCopiedToClipboard = "mailSkopiowanyDoSchowka", // mailCopiedToClipboard
+cardsWithNoSprint = "kartyBezSprintu", // cardsWithNoSprint
+showCardsFrom = "pokażKartyZ", // showCardsFrom
+yourColor = "twójKolor", // yourColor
+thisColorWillHelp = "tenKolorPomoże", // thisColorWillHelp
+logo = "logo", // logo
+prStateOpen = "stanPrOtwarte", // prStateOpen
+prStateClosed = "stanPrZamknięte", // prStateClosed
+prStateMerged = "stanPrZłączone", // prStateMerged
+invitingPeopleToWorkspace = "zapraszanieLudziDoPrzestrzeniRoboczej", // invitingPeopleToWorkspace
+upgradePublicPageIndexingTitle = "ulepszTytułIndeksowaniaPublicznejStrony", // upgradePublicPageIndexingTitle
+upgradePublicPageIndexingDescription = "ulepszOpisIndeksowaniaPublicznejStrony", // upgradePublicPageIndexingDescription
+shortcutWarningText = "tekstOstrzeżeniaSkrótu", // shortcutWarningText
+coolDown = "schłodzenie", // coolDown
+noBoardsOrPages = "brakTablicLubStron", // noBoardsOrPages
+language = "język", // language
+usersWork = "pracaUżytkowników", // usersWork
+renameAttachment = "zmieńNazwęZałącznika", // renameAttachment
+deleteAttachment = "usuńZałącznik", // deleteAttachment
+timelineLayoutDescription = "opisUkładuOsiCzasu", // timelineLayoutDescription
+upgradeViewsDescription = "ulepszOpisWidoków", // upgradeViewsDescription
+createNewItem = "stwórzNowyElement", // createNewItem
+statusType = "typStatusu", // statusType
+spaceLimitReached = "osiągniętoLimitPrzestrzeni", // spaceLimitReached
+freePlanUsageLimits = "limityUżyciaPlanuDarmowego", // freePlanUsageLimits
+item = "element", // item
+usage = "użycie", // usage
+limitReachedLong = "osiągniętoLimitDługo", // limitReachedLong
+limitReached = "osiągniętoLimit", // limitReached
+resourceAndContentWillBeDeleted = "zasobyIZawartośćZostanąUsunięte", // resourceAndContentWillBeDeleted
+resourceWillBeDeleted = "zasóbZostanieUsunięty", // resourceWillBeDeleted
+listNameLabel = "etykietaNazwaListy", // listNameLabel
+deleteList = "usuńListę", // deleteList
+itemName = "nazwaElementu", // itemName
+moveCardIntoSprint = "przenieśKartęDoSprintu", // moveCardIntoSprint
+addView = "dodajWidok", // addView
+timeCreatedSort = "sortowanieCzasuUtworzenia", // timeCreatedSort
+timeUpdatedSort = "sortowanieCzasuAktualizacji", // timeUpdatedSort
+dueDateSort = "sortowanieDatyZakończenia", // dueDateSort
+noSprintsLabel = "brakEtykietaSprintów", // noSprintsLabel
+createdCardViaEmail = "utworzonaKartaZaPośrednictwemE-maila", // createdCardViaEmail
+cardCreatedViaEmail = "kartaUtworzonaZaPośrednictwemE-maila", // cardCreatedViaEmail
+couldNotBeVerified = "nieMożnaPotwierdzić", // couldNotBeVerified
+createCardsViaEmailTitle = "utwórzKartyZaPośrednictwemE-mailaTytuł", // createCardsViaEmailTitle
+createCardsViaEmailDescription = "utwórzKartyZaPośrednictwemE-mailaOpis", // createCardsViaEmailDescription
+onlyCurrentAddressWillWork = "tylkoBieżącyAdresBędzieDziałać", // onlyCurrentAddressWillWork
+regenerate = "regeneruj", // regenerate
+emailCopiedToClipboard = "emailSkopiowanyDoSchowka", // emailCopiedToClipboard
+emailRegenerated = "emailZregenerowany", // emailRegenerated
+folder = "folder", // folder
+yourSpaces = "twojePrzestrzenie", // yourSpaces
+quoteReply = "cytatOdpowiedzi", // quoteReply
+itemHasBeenDeleted = "elementZostałUsunięty", // itemHasBeenDeleted
+deletedNotification = "powiadomienieOUsunięciu", // deletedNotification
+SearchForBoard = "szukajTablicy", // Search for board
+ActiveSprintText = "tekstAktywnegoSprintu", // Active sprint text
+LoadMoreSprints = "załadujWięcejSprintów", // Load more sprints
+Try = "spróbuj", // Try
+AddWorkspaceLogoTitle = "dodaj_logo_przestrzeni_roboczej.tytuł", // Add workspace logo title
+AddWorkspaceLogoTooltip = "dodaj_logo_przestrzeni_roboczej.wskazówka", // Add workspace logo tooltip
+CustomiseYourProfileTitle = "dostosuj_swój_profil.tytuł", // Customise your profile title
+CustomiseYourProfileTooltip = "dostosuj_swój_profil.wskazówka", // Customise your profile tooltip
+ImportTasksTitle = "import_zadań.tytuł", // Import tasks title
+ImportTasksTooltip = "import_zadań.wskazówka", // Import tasks tooltip
+ViewKeyboardShortcutsTitle = "widok_skrótów_klawiszowych.tytuł", // View keyboard shortcuts title
+ViewKeyboardShortcutsTooltip = "widok_skrótów_klawiszowych.wskazówka", // View keyboard shortcuts tooltip
+ConnectSlackTitle = "połącz_slack.tytuł", // Connect Slack title
+ConnectSlackTooltip = "połącz_slack.wskazówka", // Connect Slack tooltip
+SeeAllWorkspaces = "zobaczWszystkiePrzestrzenieRobocze", // See all workspaces
+WorkspaceSettings = "ustawieniaPrzestrzeniRoboczej", // Workspace settings
+SwitchToRecentWorkspace = "przełączNaOstatniąPrzestrzeńRoboczą", // Switch to recent workspace
+Icon = "ikona", // Icon
+AddToSprint = "dodajDoSprintu", // Add to sprint
+AddToProject = "dodajDoProjektu", // Add to project
+GoToProject = "przejdźDoProjektu", // Go to project
+AddTags = "dodajTagi", // Add tags
+Cancelled = "anulowano", // Cancelled
+SprintBoards = "tabliceSprintu", // Sprint boards
+SprintSettingsBoardsDescription = "opisUstawieńTablicSprintu", // Sprint settings boards description
+AddedCard = "dodanaKarta", // Added card
+RemovedCard = "usuniętaKarta", // Removed card
+AddNewCard = "dodajNowąKartę", // Add new card
+AddExistingCard = "dodajIstniejącąKartę", // Add existing card
+ChangeEpicOrParent = "zmieńEpikLubRodzica", // Change epic or parent
+CardAlreadyHasEpicOrParent = "kartaJużMaEpikLubRodzica", // Card already has epic or parent
+ChangeEpic = "zmieńEpik", // Change epic
+ChildCardIsPartOfEpic = "kartaPodrzędnaJestCzęściąEpiku", // Child card is part of epic
+ParentCardHasNoEpic = "kartaNadrzędnaNieMaEpiku", // Parent card has no epic
+ParentCardIsPartOfEpic = "kartaNadrzędnaJestCzęściąEpiku", // Parent card is part of epic
+ChildCardsEpicWillBeRemoved = "epikKartPodrzędnychZostanieUsunięty", // Child cards epic will be removed
+ChildCardsEpicWillChangeToParents = "epikKartPodrzędnychZmieniąSięNaRodziców", // Child cards epic will change to parents
+RemoveEpic = "usuńEpik", // Remove epic
+EpicWillNoLongerBeAssociated = "epikNieBędzieJużPowiązany", // Epic will no longer be associated
+ChildCardAlreadyHasParent = "kartaPodrzędnaJużMaRodzica", // Child card already has parent
+CardsDirectlyAddedToEpicCantHaveParent = "kartyBezpośrednioDodaneDoEpikuNieMogąMiećRodzica", // Cards directly added to epic can't have parent
+EpicNoTagsFound = "brakTagówEpiku", // No tags found in epic
+CannotChangeStatusForCardsInFinishedSprint = "nieMożnaZmieńStatusuDlaKartWZakończonymSprincie", // Cannot change status for cards in finished sprint
+CannotChangeStatusForArchivedCards = "nieMożnaZmieńStatusuDlaZarchiwizowanychKart", // Cannot change status for archived cards
+CantMoveArchivedCardToSprint = "nieMożnaPrzenieśćZarchiwizowanejKartyDoSprintu", // Can't move archived card to sprint
+RelatedTo = "powiązaneZ", // Related to
+ChangePriority = "zmieńPriorytet", // Change priority
+ChangeEstimate = "zmieńOszacowanie", // Change estimate
+ChangeTags = "zmieńTagi", // Change tags
+ChangeSprint = "zmieńSprint", // Change sprint
+GoToSprint = "przejdźDoSprintu", // Go to sprint
+PastSprints = "przeszłeSprinty", // Past sprints
+CurrentAndPlannedSprints = "aktualneIPlanowaneSprinty", // Current and planned sprints
+SeeAllSprints = "zobaczWszystkieSprinty", // See all sprints
+CurrentAndNextSprint = "aktualnyINastępnySprint", // Current and next sprint
+BranchSpecificAutomationAddFailed = "dodanieAutomatyzacjiSpecyficznejDlaGałęziNiePowiodłoSię", // Branch specific automation add failed
+BranchSpecificAutomationUpdateFailed = "aktualizacjaAutomatyzacjiSpecyficznejDlaGałęziNiePowiodłoSię", // Branch specific automation update failed
+BranchSpecificAutomationRemoveFailed = "usunięcieAutomatyzacjiSpecyficznejDlaGałęziNiePowiodłoSię", // Branch specific automation remove failed
+ThereAreNoCurrentOrPlannedSprints = "nieMaAktualnychLubPlanowanychSprintów", // There are no current or planned sprints
+ThereIsNoCurrentOrNextSprint = "nieMaAktualnegoLubNastępnegoSprintu", // There is no current or next sprint
+MovedCardFrom = "przeniesionaKartaZ", // Moved card from
+RolledCardFrom = "rolowanaKartaZ", // Rolled card from
+SprintMarkedAsCompleted = "sprintOznaczonyJakoZakończony", // Sprint marked as completed
+SprintMarkedAsCancelled = "sprintOznaczonyJakoAnulowany", // Sprint marked as cancelled
+CardIsParent = "kartaJestRodzicem", // Card is parent
+CardIsChild = "kartaJestPodrzędna", // Card is child
+CardIsRelated = "kartaJestPowiązana", // Card is related
+ParentCard = "kartaNadrzędna", // Parent card
+MoveTo = "przenieśDo", // Move to
+PageMovedTo = "stronaPrzeniesionaDo", // Page moved to
+ThisSpaceIsEmpty = "taPrzestrzeńJestPusta", // This space is empty
+CreateSomethingToGetStarted = "stwórzCośAbyRozpocząć", // Create something to get started
+VisualiseYourWorkflow = "wizualizujSwójPrzepływPracy", // Visualise your workflow
+CaptureImportantInformation = "zbierajWażneInformacje", // Capture important information
+OrganiseWorkIntoSprints = "organizujPracęWSprintach", // Organise work into sprints
+FilterYourWorkspaceToCreateViews = "filtrujSwojąPrzestrzeńRobocząAbyTworzyćWidoki", // Filter your workspace to create views
+TurnOnSprints = "włączSprinty", // Turn on sprints
+CardViews = "widokiKart", // Card views
+Convert = "przekształć", // Convert
+ConvertCardToEpic = "Przekształć kartę w epik", // Convert card to epic 
+CouldNotConvertCardToEpic = "nieUdałoSięPrzekształcićKartyWEpik", // Could not convert card to epic
+CardSuccessfullyConvertedToEpic = "kartaPomyślniePrzekształconaWEpik", // Card successfully converted to epic
+ConvertedCardWillLose = "przekształconaKartaStraci", // Converted card will lose
+ConvertedThisCardToEpic = "przekształconoTęKartęWEpik", // Converted this card to epic
+SpaceLevelTags = "tagiPoziomuPrzestrzeni", // Space level tags
+EffortEstimate = "szacowanieWysiłku", // Effort estimate
+ExistingEpic = "istniejącyEpik", // Existing epic
+RoadmapMustHaveAtLeastOneStatus = "mapaDrogowaMusiMiećPrzynajmniejJedenStatus", // Roadmap must have at least one status
+ChosenPageIsAlreadySubpage = "wybranaStronaJestJużPodstroną", // Chosen page is already subpage
+SearchForResults = "szukajWyników", // Search for results
+ParentCardIs = "kartaNadrzędnaJest", // Parent card is
+ProjectIs = "projektJest", // Project is
+ConvertedTo = "przekształconyDo", // Converted to
+MoveToCompletedSprint = "przenieśDoZakończonegoSprintu", // Move to completed sprint
+OnlyDoneCardsCanBeMovedToCompletedSprint = "tylkoZakończoneKartyMogąByćPrzenoszoneDoZakończonegoSprintu", // Only done cards can be moved to completed sprint,
+}
+
+export type Translations = Record<TranslationKeys, string>;
+
+
+
